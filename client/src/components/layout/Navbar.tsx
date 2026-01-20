@@ -49,7 +49,11 @@ export function Navbar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-3">
+            <div className="flex flex-col text-right">
+              <a href="mailto:contact@eazytaxes.com" className="text-[9px] text-slate-600 hover:text-[#3FB9CB]">contact@eazytaxes.com</a>
+              <a href="tel:+12068860475" className="text-[9px] text-slate-600 hover:text-[#3FB9CB]">+1 206-886-0475</a>
+            </div>
             <button
               onClick={toggleMenu}
               className="text-slate-600 hover:text-slate-900 focus:outline-none"

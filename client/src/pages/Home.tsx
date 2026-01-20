@@ -47,7 +47,7 @@ export default function Home() {
               </div>
               <p className="text-sm text-slate-400 font-medium">Takes only 2 minutes</p>
 
-              <div className="scroll-down-container mt-12 mb-0 hidden md:flex">
+              <div className="scroll-down-container mt-12 mb-0 flex md:flex">
                 <div className="chevron"></div>
                 <div className="chevron"></div>
                 <div className="chevron"></div>
