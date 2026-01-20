@@ -1,0 +1,2033 @@
+PAGE: Home — 
+https://eazytaxes.com
+1. HERO SECTION
+Layout:
+Full-width hero, centered content, minimal.
+Content:
+Heading (H1):
+
+ Clarity. Control. Accountability.
+
+
+Intro line (optional, can be just below H1 or above intro paragraph):
+
+ (Leave empty or skip – hero stands alone.)
+
+
+Primary CTA button:
+
+
+Label: Start Here
+
+
+Link: /start  (or whatever your Start Here route will be)
+
+
+No secondary CTA needed on hero for now.
+
+2. INTRO BLOCK – “WHO WE ARE”
+Placement:
+Directly under hero (single paragraph).
+Content (choose ONE and implement):
+Intro Option 1 (recommended):
+
+ Eazytaxes Inc. is a US-based professional services firm offering tax, compliance, assurance, and advisory services to businesses and individuals.
+
+
+Intro Option 2:
+
+ Eazytaxes Inc. is a US-based firm providing tax, compliance, assurance, and advisory services across multiple areas of US regulation and reporting.
+
+
+Dev note: treat this as a single text block under the hero, max width container.
+
+3. SERVICE LINES GRID
+Placement:
+Below the intro paragraph.
+Section label (small text above grid):
+Choose the area you need support with.
+Layout:
+Responsive grid of 6 cards/tiles (3x2 on desktop, 2x3 or 1x6 on mobile).
+Each tile = Title, one-line description, entire tile clickable.
+
+SERVICE TILE 1
+Title:
+
+ Tax & Compliance
+
+
+Description:
+
+ US tax filings and compliance matters for individuals and businesses.
+
+
+Click target (URL):
+
+ /tax-compliance
+
+ (You can later map this to tax.eazytaxes.com if needed.)
+
+
+
+SERVICE TILE 2
+Title:
+
+ Tax Resolution
+
+
+Description:
+
+ IRS and state notices, audits, and enforcement-related matters.
+
+
+Click target (URL):
+
+ https://resolution.eazytaxes.com
+
+
+
+SERVICE TILE 3
+Title:
+
+ Assurance & SOC 2
+
+
+Description:
+
+ SOC 2 engagements and related assurance requirements.
+
+
+Click target (URL):
+
+ https://soc.eazytaxes.com
+
+
+
+SERVICE TILE 4
+Title:
+
+ CFO & Advisory
+
+
+Description:
+
+ Financial oversight and advisory support.
+
+
+Click target (URL):
+
+ https://cfo.eazytaxes.com
+
+
+
+SERVICE TILE 5
+Title:
+
+ Valuations (409A)
+
+
+Description:
+
+ Equity and compliance-related valuations.
+
+
+Click target (URL):
+
+ https://valuations.eazytaxes.com
+
+
+
+SERVICE TILE 6
+Title:
+
+ US Formation & Banking
+
+
+Description:
+
+ US entity formation, EIN, and banking assistance.
+
+
+Click target (URL):
+
+ https://formation.eazytaxes.com
+
+
+
+4. GLOBAL CTA (OPTIONAL REPEAT BELOW GRID)
+Placement:
+Under the services grid, centered.
+Text:
+Not sure which service applies?
+Button label:
+Start Here
+Button link:
+/start
+
+5. FOOTER CONFIDENCE LINE
+Placement:
+Either above the standard site footer or as part of it.
+Text:
+All services are provided by Eazytaxes Inc., a US-based tax, assurance, and advisory firm.
+
+SECTION 6 — CREDENTIALS / POSITIONING STRIP
+Placement:
+Immediately below the Service Lines grid.
+Layout:
+Single horizontal strip, low visual weight.
+Small font size. Neutral color.
+Content (single line, exact text):
+US-based professional services firm · Cross-border and domestic matters · Project-based and ongoing engagements
+
+SECTION 7 — WHO WE WORK WITH
+Placement:
+Below Section 6.
+Section Heading:
+Who we work with
+Layout:
+Bullet list or simple vertical list (no icons required).
+Content (exact text):
+Founders and owner-led businesses
+
+
+Growing companies with US operations
+
+
+Cross-border individuals and families
+
+
+Teams requiring ongoing compliance or advisory support
+
+
+
+SECTION 8 — ENGAGEMENT TYPES
+Placement:
+Below Section 7.
+Section Heading:
+Engagements
+Layout:
+Simple list or 3-column layout.
+Content (exact text):
+One-time engagements
+
+
+Ongoing advisory relationships
+
+
+Project-based and recurring work
+
+
+
+SECTION 9 — JURISDICTION / SCOPE LINE
+Placement:
+Below Section 8 or just above final CTA.
+Layout:
+Single sentence. Small font.
+Content (exact text):
+US regulatory and advisory work for domestic and international clients.
+
+SECTION 10 — FINAL CTA
+Placement:
+Above footer.
+Layout:
+Centered text with single button.
+Text:
+Ready to proceed?
+Button Label:
+Start Here
+Button Link:
+/start
+
+SECTION 11 — FOOTER CONFIDENCE LINE
+Placement:
+Inside footer, above legal links.
+Content (exact text):
+All services are provided by Eazytaxes Inc., a US-based tax, assurance, and advisory firm.
+
+1) HOMEPAGE — CLICKABLE BEHAVIOR SPEC
+Page: https://eazytaxes.com
+Scope: Only what happens when users click things.
+A. HERO CTA
+Element: Primary button in hero
+
+
+Label: Start Here
+
+
+Click Action: Navigate to
+
+ /start
+
+
+Notes:
+
+
+This is the only element in the hero that routes anywhere.
+
+
+
+B. SERVICE LINES GRID (ON HOMEPAGE)
+These are the six service tiles/cards under the intro text.
+For each tile:
+1. Tax & Compliance
+Clickable area: Entire tile/card
+
+
+Destination URL:
+
+ /tax-compliance
+
+ (internal page under main domain)
+
+
+2. Tax Resolution
+Clickable area: Entire tile/card
+
+
+Destination URL:
+
+ https://resolution.eazytaxes.com
+
+
+3. Assurance & SOC 2
+Clickable area: Entire tile/card
+
+
+Destination URL:
+
+ https://soc.eazytaxes.com
+
+
+4. CFO & Advisory
+Clickable area: Entire tile/card
+
+
+Destination URL:
+
+ https://cfo.eazytaxes.com
+
+
+5. Valuations (409A)
+Clickable area: Entire tile/card
+
+
+Destination URL:
+
+ https://valuations.eazytaxes.com
+
+
+6. US Formation & Banking
+Clickable area: Entire tile/card
+
+
+Destination URL:
+
+ https://formation.eazytaxes.com
+
+
+Important behavior rule:
+Homepage tiles must go directly to their respective service pages/subdomains.
+
+
+They should not route via /start.
+
+
+
+C. FINAL CTA ON HOMEPAGE
+At the bottom of the page (before footer):
+Text: Ready to proceed?
+
+
+Button Label: Start Here
+
+
+Button Link: /start
+
+
+So: hero Start Here → /start; bottom Start Here → /start.
+
+D. OTHER HOMEPAGE ELEMENTS
+“Who we work with” section: static text, no links required.
+
+
+“Engagements” section: static text, no links required.
+
+
+Credentials strip: static text, no links required.
+
+
+The only clickable items on homepage (for navigation) are:
+Hero Start Here button → /start
+
+
+Six service tiles → each respective service URL
+
+
+Final Start Here button → /start
+
+
+Normal header nav / footer nav (as per global layout)
+
+
+
+2) 
+/start
+ PAGE — UPDATED SPEC (ALIGNED WITH THIS MODEL)
+Page: https://eazytaxes.com/start
+Purpose: Optional guided router for people who click “Start Here”.
+This page now duplicates the six choices and gives one extra “Not sure” path.
+2.1 BASIC INFO
+Title (H1): Start Here
+
+
+Subheading: Choose the area you need support with.
+
+
+HTML <title>: Start Here | Eazytaxes Inc.
+
+
+
+2.2 MAIN GRID (SAME SIX SERVICE AREAS)
+Layout: grid of 6 cards (3×2 desktop, 2×3 tablet, 1×6 mobile).
+Each card has: title, one-line description, and is fully clickable.
+CARD 1 — US Tax & Compliance
+Title: US Tax & Compliance
+
+
+Description: US tax filings and compliance matters for individuals and businesses.
+
+
+Destination URL: /tax-compliance
+
+
+CARD 2 — Tax Resolution
+Title: Tax Resolution
+
+
+Description: IRS and state notices, audits, and enforcement-related matters.
+
+
+Destination URL: https://resolution.eazytaxes.com
+
+
+CARD 3 — Assurance & SOC 2
+Title: Assurance & SOC 2
+
+
+Description: SOC 2 engagements and related assurance requirements.
+
+
+Destination URL: https://soc.eazytaxes.com
+
+
+CARD 4 — CFO & Advisory
+Title: CFO & Advisory
+
+
+Description: Financial oversight and advisory support.
+
+
+Destination URL: https://cfo.eazytaxes.com
+
+
+CARD 5 — Valuations (409A)
+Title: Valuations (409A)
+
+
+Description: Equity and compliance-related valuations.
+
+
+Destination URL: https://valuations.eazytaxes.com
+
+
+CARD 6 — US Formation & Banking
+Title: US Formation & Banking
+
+
+Description: US entity formation, EIN, and banking assistance.
+
+
+Destination URL: https://formation.eazytaxes.com
+
+
+
+2.3 “NOT SURE” / FALLBACK SECTION
+Placement:
+Under the 6-card grid.
+Content:
+Heading:
+
+ Not sure which service applies?
+
+
+Subtext:
+
+ If your situation does not clearly fit one category, you can reach out and we’ll guide you internally.
+
+
+Button:
+
+
+Label: Contact Us
+
+
+Link: /contact (or whatever your contact page route is)
+
+
+No form on this page. It just links to your existing contact.
+
+2.4 FOOTER CONFIDENCE LINE
+Just above the standard site footer:
+Text:
+
+ All services are provided by Eazytaxes Inc., a US-based tax, assurance, and advisory firm.
+
+
+
+Applies to: ALL service pages (Tax & Compliance, Resolution, SOC 2, CFO, Valuations, Formation)
+This document is the standard. Implement once and reuse.
+
+0) GLOBAL RULES (SITE-WIDE)
+Primary Goal
+Self-serve purchase → immediate onboarding.
+Secondary Goals
+If user is unsure: guided selector (/start)
+
+
+If user wants human help: book a call (Calendly) OR message us (/contact)
+
+
+CTA Priority (must be consistent across all service pages)
+Primary: Get Started (paid checkout)
+
+
+Secondary: Book a Call (Calendly)
+
+
+Tertiary: Not sure? Start Here (/start)
+
+
+Navigation / Tracking (required)
+Every “Get Started” click must pass:
+service=<slug> (e.g., tax-compliance)
+
+
+variant=<segment> (e.g., individual/business/crossborder)
+
+
+case=<usecase> (optional)
+
+
+source=<page> (auto or hardcoded, e.g., tax-compliance)
+
+
+Example:
+/checkout?service=tax-compliance&variant=individual&case=catchup&source=tax-compliance
+
+1) PAGE: 
+/tax-compliance
+ (HIGH-CONVERSION, HIGH-CLARITY)
+URL: https://eazytaxes.com/tax-compliance
+Primary CTA checkout route: /checkout?service=tax-compliance
+On payment success redirect: /onboarding?service=tax-compliance
+
+2) SEO / META
+Title:
+US Tax & Compliance | Eazytaxes Inc.
+Meta Description:
+Purchase and onboard for US tax filings and compliance. Individuals, businesses, and cross-border situations.
+
+3) PAGE STRUCTURE (TOP → BOTTOM)
+Hero (headline + 3 CTAs)
+
+
+Pricing / Purchase Options (clear packages)
+
+
+What you get (deliverables)
+
+
+Choose your situation (segmented cards → checkout)
+
+
+What we cover (scope)
+
+
+Proof / Trust (high authority section)
+
+
+How it works (3-step, minimal)
+
+
+FAQ (conversion blockers)
+
+
+Final CTA block
+
+
+Footer confidence line
+
+
+
+4) SECTION 1 — HERO
+H1:
+US Tax & Compliance
+Subheading:
+Buy, onboard, and get started immediately for US tax filings and compliance matters.
+Primary CTA (button)
+Label: Get Started
+
+
+Link: /checkout?service=tax-compliance
+
+
+Secondary CTA (button, ghost/outline)
+Label: Book a Call
+
+
+Link: [CALENDLY_TAX_COMPLIANCE_LINK]
+
+
+Tertiary CTA (text link)
+Text: Not sure which service applies?
+
+
+Link: /start
+
+
+Clickable elements: the 3 CTAs above only.
+
+5) SECTION 2 — PRICING / PURCHASE OPTIONS (MANDATORY)
+Section Heading:
+Pricing options
+Layout: 3 pricing cards (clickable).
+Each card has: Title, “Best for”, Price placeholder, Bullet inclusions, CTA.
+Note: If you don’t want to finalize prices now, keep placeholders exactly as shown.
+Pricing Card A
+Title: Individual Filing
+Best for: W-2, investment income, basic cross-border items
+Price: From $___
+Includes (bullets):
+Federal return preparation and filing
+
+
+State filing (if applicable)
+
+
+Secure onboarding + document checklist
+
+ CTA Button:
+
+
+Label: Start Individual Filing
+
+
+Link: /checkout?service=tax-compliance&variant=individual
+
+
+Pricing Card B
+Title: Business Filing
+Best for: LLCs, corporations, partnerships with ongoing compliance
+Price: From $___
+Includes (bullets):
+Entity return preparation and filing
+
+
+State compliance (if applicable)
+
+
+Secure onboarding + document checklist
+
+ CTA Button:
+
+
+Label: Start Business Filing
+
+
+Link: /checkout?service=tax-compliance&variant=business
+
+
+Pricing Card C (Featured)
+Title: Cross-border / International
+Best for: Foreign income/assets, non-US entities, overseas reporting triggers
+Price: From $___
+Includes (bullets):
+Return + cross-border compliance intake
+
+
+Reporting scope confirmation during onboarding
+
+
+Secure onboarding + checklist
+
+ CTA Button:
+
+
+Label: Start Cross-border Filing
+
+
+Link: /checkout?service=tax-compliance&variant=crossborder
+
+
+Clickable elements: Each pricing CTA button.
+
+6) SECTION 3 — WHAT YOU GET (DELIVERABLES, NOT PROCESS)
+Section Heading:
+What you get
+Layout: 6 tiles (static, no links)
+Text (exact tiles):
+Prepared and filed returns (as applicable)
+
+
+Compliance requirement confirmation (based on your intake)
+
+
+Secure client onboarding and document checklist
+
+
+Request list for missing items
+
+
+Final deliverables shared securely
+
+
+Support for follow-up questions post-delivery (limited)
+
+
+Clickable: none.
+
+7) SECTION 4 — CHOOSE YOUR SITUATION (FAST PATHS, CLICKABLE)
+Section Heading:
+Choose your situation
+Layout: 6 clickable situation cards.
+Each card: Title + 1 line + CTA.
+Behind on filings (catch-up)
+
+ CTA: Start Catch-up
+
+ Link: /checkout?service=tax-compliance&case=catchup
+
+
+Foreign income or overseas assets
+
+ CTA: Start International
+
+ Link: /checkout?service=tax-compliance&case=foreign
+
+
+Multiple states involved
+
+ CTA: Start Multi-state
+
+ Link: /checkout?service=tax-compliance&case=multistate
+
+
+Self-employed / contractor income
+
+ CTA: Start Self-employed
+
+ Link: /checkout?service=tax-compliance&case=selfemployed
+
+
+New entity filing
+
+ CTA: Start Entity Filing
+
+ Link: /checkout?service=tax-compliance&case=newentity
+
+
+Not sure
+
+ CTA: Use Start Here
+
+ Link: /start
+
+
+Clickable elements: all 6 CTAs.
+
+8) SECTION 5 — WHAT WE COVER (SCOPE)
+Section Heading:
+What we cover
+Content (static bullets):
+US federal and state tax filings
+
+
+Individual, business, and entity compliance
+
+
+Cross-border filing obligations triggered by foreign activity
+
+
+Prior-year corrections and catch-up filings
+
+
+Ongoing compliance support where requirements evolve
+
+
+Clickable: none.
+
+9) SECTION 6 — PROOF / TRUST (HIGH AUTHORITY)
+Section Heading:
+Why clients choose Eazytaxes
+Layout: 4 proof blocks (static)
+Proof Blocks (exact text):
+US-based firm supporting domestic and cross-border clients
+
+
+Work spanning tax, assurance, and advisory service lines
+
+
+Experience with recurring compliance and multi-year catch-up matters
+
+
+Structured onboarding designed to reduce back-and-forth and missed items
+
+
+Optional (if you have assets later):
+Logos row (hidden until provided)
+
+
+Testimonials (hidden until provided)
+
+
+Clickable: none.
+
+10) SECTION 7 — HOW IT WORKS (MINIMAL, 3 STEPS)
+Section Heading:
+How it works
+Steps (exact text):
+Purchase and create your account
+
+
+Complete onboarding and upload documents
+
+
+We review and proceed with the filing scope
+
+
+Clickable: none.
+
+11) SECTION 8 — FAQ (CONVERSION BLOCKERS)
+Section Heading:
+FAQ
+Accordion items (exact Q/A):
+Q1: What happens after I pay?
+A: You’ll be taken to onboarding immediately to confirm details and receive a document checklist.
+Q2: What if I’m not sure which option applies?
+A: Use Start Here or book a call, and we’ll guide you to the right service.
+Q3: Do you handle state filings?
+A: If your situation requires state filings, they are handled as part of the engagement based on scope.
+Q4: Can you handle prior-year filings?
+A: Yes. Choose “Behind on filings (catch-up)” to begin.
+Q5: Do you handle cross-border compliance?
+A: Yes. Choose the Cross-border option or “Foreign income or overseas assets.”
+Clickable:
+Inline link in A2: “Start Here” → /start
+
+
+Inline link in A2: “book a call” → [CALENDLY_TAX_COMPLIANCE_LINK]
+
+ (Only these two inline links permitted in FAQ.)
+
+
+
+12) SECTION 9 — FINAL CTA BLOCK
+Heading:
+Get started now
+Primary Button:
+Label: Get Started
+
+
+Link: /checkout?service=tax-compliance
+
+
+Secondary Button:
+Label: Book a Call
+
+
+Link: [CALENDLY_TAX_COMPLIANCE_LINK]
+
+
+Tertiary Text Link:
+Text: Not sure? Start Here
+
+
+Link: /start
+
+
+
+13) SECTION 10 — FOOTER CONFIDENCE LINE
+Text:
+All services are provided by Eazytaxes Inc., a US-based tax, assurance, and advisory firm.
+
+14) CLICKABLE ELEMENTS (FINAL LIST)
+Hero: Get Started → /checkout?service=tax-compliance
+
+
+Hero: Book a Call → [CALENDLY_TAX_COMPLIANCE_LINK]
+
+
+Hero: Not sure → /start
+
+
+Pricing card CTAs (3) → checkout with variant=
+
+
+Situation card CTAs (6) → checkout with case= or /start
+
+
+FAQ links (Start Here + Calendly)
+
+
+Final CTA block (Get Started + Book a Call + Start Here)
+
+
+No other links inside body copy.
+
+15) REQUIRED PAGES / ROUTES (DEV CHECKLIST)
+/checkout page supports query params and routes to payment provider
+
+
+Payment success redirect: /onboarding?service=tax-compliance
+
+
+Payment cancel redirect: back to /tax-compliance with ?payment=cancelled
+
+
+/onboarding supports service param and shows correct onboarding form
+
+
+
+PAGE: Assurance Services
+URL: https://eazytaxes.com/assurance
+
+SECTION 1 — HERO
+Layout:
+ Full-width hero with professional gradient background (navy/blue), white text, centered content.
+Content:
+Heading (H1):
+ Financial Statement Assurance You Can Trust
+
+
+Subheading:
+ Independent audits, reviews, and compilations for businesses seeking credibility with lenders, investors, and stakeholders.
+
+
+Primary CTA button:
+
+
+Label: Get Started
+Link: #pricing (scroll to pricing section)
+Secondary CTA button:
+
+
+Label: Schedule a Consultation
+Link: [CALENDLY_ASSURANCE_LINK]
+Dev note: Professional, authoritative feel. Deep blue gradient, clean typography.
+
+SECTION 2 — TRUST BAR
+Placement:
+ Immediately below hero, light gray background.
+Layout:
+ Horizontal stats bar, 3 statistics centered.
+Content (exact text):
+Stat 1:
+Number: 200+
+Label: Audits & Reviews Completed
+Stat 2:
+Number: 15 Years
+Label: Combined Team Experience
+Stat 3:
+Number: Zero
+Label: Qualified Opinions Issued
+Dev note: Numbers large and bold. "Zero Qualified Opinions" is a strong trust signal in assurance work.
+
+SECTION 3 — PRICING / SERVICE TYPES
+Placement:
+ Below trust bar.
+Section Heading:
+ Assurance Engagement Options
+Section Subheading:
+ Choose the level of assurance appropriate for your stakeholders' requirements
+Layout:
+ 3-column responsive grid (stack to 1 column on mobile). Cards arranged in order of assurance level.
+PRICING CARD 1
+Title: Compilation
+Best for: Internal use, basic financial reporting needs
+Price:
+ From $3,500
+ (Starting rate for standard compilations)
+What it is:
+ We present your financial information in the form of financial statements without providing any assurance on the accuracy.
+Includes (bullets):
+Financial statement preparation
+Management representation letter
+Compilation report (no assurance provided)
+Basic financial statement formatting
+References to accounting framework used
+Who needs this:
+Early-stage companies
+Businesses with basic reporting requirements
+Organizations needing formatted financials without audit requirement
+CTA Button:
+Label: Start Compilation
+Link: /checkout?service=assurance&variant=compilation
+
+PRICING CARD 2 (FEATURED)
+Featured Badge: Most Common
+Title: Review
+Best for: Lenders, investors requiring moderate assurance
+Price:
+ From $8,500
+ (Varies by company size and complexity)
+What it is:
+ We perform analytical procedures and inquiries to provide limited assurance that no material modifications are needed to your financial statements.
+Includes (bullets):
+Financial statement review procedures
+Analytical procedures and inquiries
+Review report with limited assurance
+Management representation letter
+Discussion of any required adjustments
+Who needs this:
+Companies seeking bank financing
+Private equity portfolio companies
+Businesses with investor reporting requirements
+Organizations transitioning from compilation to audit
+CTA Button:
+Label: Start Review
+Link: /checkout?service=assurance&variant=review
+Dev note: This card should stand out — border highlight, slight elevation, "Most Common" badge.
+
+PRICING CARD 3
+Title: Audit
+Best for: Highest level of assurance, regulatory requirements
+Price:
+ From $15,000
+ (Based on scope and complexity)
+What it is:
+ We perform extensive testing and verification procedures to provide reasonable assurance that financial statements are free from material misstatement.
+Includes (bullets):
+Comprehensive audit procedures and testing
+Internal control evaluation
+Third-party confirmations
+Substantive testing of account balances
+Audit opinion on financial statements
+Management letter with recommendations
+Who needs this:
+Companies with debt covenants requiring audits
+Businesses preparing for sale or acquisition
+Organizations with regulatory audit requirements
+Companies seeking significant outside investment
+CTA Button:
+Label: Request Audit Proposal
+Link: /checkout?service=assurance&variant=audit
+
+SECTION 4 — WHAT'S INCLUDED
+Placement:
+ Below pricing section.
+Section Heading:
+ What to Expect from Our Assurance Engagements
+Section Subheading:
+ Professional, efficient engagements designed to minimize disruption to your business
+Layout:
+ 6-tile grid (2 rows × 3 columns desktop, stack on mobile). Each tile has icon/emoji, title, and one-line description.
+Tiles (exact content):
+Tile 1:
+ 📋 Engagement Planning
+ Upfront scoping and timeline discussion to align expectations and deliverables
+Tile 2:
+ 🔍 Fieldwork Execution
+ Efficient testing procedures with minimal disruption to your daily operations
+Tile 3:
+ 💬 Direct Communication
+ Regular updates throughout the engagement with a dedicated engagement manager
+Tile 4:
+ 📊 Draft Review
+ Collaborative review of draft financial statements before finalization
+Tile 5:
+ ✅ Final Deliverables
+ Formal report with opinion/conclusion and professionally formatted financial statements
+Tile 6:
+ 📈 Management Insights
+ Recommendations for improving controls, processes, or financial reporting (audit only)
+Clickable: None (informational only)
+
+SECTION 5 — ENGAGEMENT PROCESS
+Placement:
+ Below What's Included.
+Section Heading:
+ How Our Assurance Process Works
+Section Subheading:
+ Transparent, collaborative approach from start to finish
+Layout:
+ 4-step horizontal timeline/process (numbered steps).
+Steps (exact content):
+Step 1:
+ Engagement Planning
+ We discuss scope, timing, materiality levels, and information needs. You receive a detailed engagement letter outlining deliverables.
+Step 2:
+ Information Request
+ We provide a comprehensive PBC (Provided by Client) list. You gather supporting documentation and financial records.
+Step 3:
+ Fieldwork & Testing
+ We perform procedures appropriate to the engagement type (compilation/review/audit) and communicate any questions or findings in real-time.
+Step 4:
+ Report Delivery
+ You receive the final assurance report, formatted financial statements, and management letter (if applicable).
+Dev note: Use large numbers (1, 2, 3, 4) in circles. Consider connecting line on desktop view.
+Clickable: None
+
+SECTION 6 — COMPARISON TABLE
+Placement:
+ Below process section.
+Section Heading:
+ Compilation vs. Review vs. Audit
+Section Subheading:
+ Understanding the differences in scope and assurance level
+Layout:
+ Responsive comparison table with 3 columns (one per service type).
+Table Content:
+Feature
+Compilation
+Review
+Audit
+Assurance Level
+None
+Limited
+Reasonable
+Testing Procedures
+None
+Analytical + Inquiries
+Extensive Testing
+Internal Control Review
+No
+No
+Yes
+Third-Party Confirmations
+No
+No
+Yes
+Management Letter
+No
+Optional
+Yes
+Typical Timeline
+2-3 weeks
+3-5 weeks
+6-10 weeks
+Starting Price
+$3,500
+$8,500
+$15,000
+Common Use Cases
+Basic reporting
+Lender requirements
+Regulatory/Investor requirements
+
+Dev note: Make table mobile-responsive (stack or horizontal scroll). Highlight differences clearly.
+Clickable: None
+
+SECTION 7 — WHO NEEDS ASSURANCE
+Placement:
+ Below comparison table.
+Section Heading:
+ Who Needs Assurance Services?
+Layout:
+ 2-column grid on desktop, stack on mobile.
+Content (exact text):
+Column 1 — Common Scenarios:
+Businesses seeking bank loans or lines of credit
+Companies with investor reporting obligations
+Organizations preparing for sale or acquisition
+Entities with debt covenants requiring financial statement audits
+Nonprofits with grant requirements or donor expectations
+Column 2 — Industry Applications:
+Private equity portfolio companies
+SaaS and technology businesses
+Manufacturing and distribution companies
+Professional services firms
+Real estate holding companies
+Clickable: None
+
+SECTION 8 — FAQ
+Placement:
+ Below Who Needs Assurance.
+Section Heading:
+ Frequently Asked Questions
+Layout:
+ Accordion-style expandable Q&A.
+FAQ Items:
+Q1: How do I know which service I need?
+A1:
+ It depends on your stakeholders' requirements. Banks typically require reviews or audits. Early-stage companies often start with compilations. If you're unsure, schedule a consultation and we'll help you determine the appropriate engagement level based on your specific situation.
+
+Q2: How long does an assurance engagement take?
+A2:
+ Compilations typically take 2-3 weeks, reviews 3-5 weeks, and audits 6-10 weeks from information request to final report delivery. Timeline depends on your responsiveness to information requests and complexity of your financials.
+
+Q3: What financial statements are included?
+A3:
+ Standard engagements include Balance Sheet, Income Statement, Statement of Cash Flows, and footnote disclosures. We prepare statements in accordance with US GAAP or other applicable accounting frameworks.
+
+Q4: Do you handle nonprofit audits or single audits?
+A4:
+ Yes. We perform audits for nonprofit organizations, including single audits (Uniform Guidance) for entities with federal grant expenditures over $750,000. Pricing varies based on grant complexity.
+
+Q5: Can you audit our internal controls (SOX compliance)?
+A5:
+ While we don't perform SOX 404 attestations (public company requirement), we do evaluate internal controls as part of financial statement audits and can provide management letters with control recommendations. For SOC 2 compliance, see our Risk Advisory services.
+
+Q6: What if we have complex accounting issues?
+A6:
+ We handle revenue recognition (ASC 606), lease accounting (ASC 842), stock-based compensation, and other technical areas. Complex situations may require additional scoping, which we discuss during engagement planning.
+
+Q7: Do you work with our existing accounting team?
+A7:
+ Yes. We collaborate directly with your CFO, controller, or accounting staff throughout the engagement. We aim to be an extension of your team, not a disruption.
+Clickable in FAQ:
+Inline link in A1: "schedule a consultation" → [CALENDLY_ASSURANCE_LINK]
+Inline link in A5: "Risk Advisory services" → /risk-advisory (or appropriate service page)
+
+SECTION 9 — FINAL CTA
+Placement:
+ Above footer, full-width professional background (matching hero).
+Section Heading:
+ Ready to Begin Your Assurance Engagement?
+Subheading:
+ Get the credibility and confidence your stakeholders expect.
+Primary Button:
+Label: Get Started
+Link: #pricing (scroll to pricing)
+Secondary Button:
+Label: Schedule Consultation
+Link: [CALENDLY_ASSURANCE_LINK]
+
+SECTION 10 — FOOTER CONFIDENCE LINE
+Placement:
+ Inside footer, above legal links.
+Content (exact text):
+ All services are provided by Eazytaxes Inc., a US-based tax, assurance, and advisory firm.
+
+CLICKABLE ELEMENTS — FULL LIST
+Hero Section:
+Get Started → #pricing (smooth scroll)
+Schedule a Consultation → [CALENDLY_ASSURANCE_LINK]
+Pricing Cards: 3. Start Compilation → /checkout?service=assurance&variant=compilation 4. Start Review → /checkout?service=assurance&variant=review 5. Request Audit Proposal → /checkout?service=assurance&variant=audit
+FAQ: 6. "schedule a consultation" (inline) → [CALENDLY_ASSURANCE_LINK] 7. "Risk Advisory services" (inline) → /risk-advisory
+Final CTA: 8. Get Started → #pricing 9. Schedule Consultation → [CALENDLY_ASSURANCE_LINK]
+No other clickable elements in body copy.
+
+DESIGN NOTES FOR DEVELOPER
+Color Palette:
+Primary: Navy/deep blue gradient (#1e3a8a to #3b82f6)
+Accent: Professional blue (#3b82f6)
+Text: Dark gray (#1a1a1a)
+Background: White with light gray sections (#f8f9fa)
+Typography:
+Headings: Bold, professional serif or sans-serif
+Body: Clean, readable (16-18px)
+CTAs: 16-18px, bold
+Visual Style:
+Professional, authoritative, trustworthy
+Clean and credible (financial services aesthetic)
+Card-based layouts with subtle shadows
+Tables should be easy to scan
+Comparison table critical for user understanding
+Conversion Elements:
+Clear service differentiation (compilation vs review vs audit)
+Pricing transparency where possible
+Trust signals (stats, zero qualified opinions)
+Process transparency
+Multiple consultation CTAs
+
+SEO / META
+Title:
+ Assurance Services - Audits, Reviews & Compilations | Eazytaxes Inc.
+Meta Description:
+ Independent financial statement audits, reviews, and compilations for businesses. Credible assurance services for lenders, investors, and stakeholders. US-based CPA firm.
+
+EAZYTAXES - ALL SERVICE PAGES SPECIFICATIONS
+Design Style Reference: Modern, professional, conversion-focused (like Assurance page demo)
+
+PAGE 1: TAX RESOLUTION SERVICES
+URL: https://eazytaxes.com/tax-resolution
+
+SECTION 1 — HERO
+Layout:
+ Full-width hero with red gradient background (#dc2626 to #ef4444), white text, centered content.
+Content:
+Heading (H1):
+ Resolve Your IRS Tax Problems
+
+
+Subheading:
+ Expert representation for audits, notices, back taxes, and enforcement actions. We handle the IRS so you don't have to.
+
+
+Primary CTA button:
+
+
+Label: Get Help Now
+Link: #pricing
+Secondary CTA button:
+
+
+Label: Free Consultation
+Link: [CALENDLY_TAX_RESOLUTION_LINK]
+
+SECTION 2 — URGENT ALERT BAR
+Placement: Immediately below hero, yellow/amber background with warning icon.
+Content:
+Heading: Received an IRS Notice? Time Matters.
+Text:
+ Response deadlines are strict. Don't wait until it's too late. We can help you understand your options and respond appropriately.
+Dev note: Use yellow/amber (#fef3c7) background with dark text for urgency.
+
+SECTION 3 — TRUST BAR
+Stats (3 columns):
+Stat 1:
+Number: $2.5M+
+Label: Tax Debt Resolved
+Stat 2:
+Number: 500+
+Label: IRS Cases Handled
+Stat 3:
+Number: 98%
+Label: Penalty Abatement Success Rate
+
+SECTION 4 — PRICING / SERVICE OPTIONS
+Section Heading:
+ How We Can Help
+Section Subheading:
+ Choose the service that matches your IRS situation
+Layout: 3 pricing cards
+CARD 1
+Title: Notice Response
+Best for: IRS letters, CP notices, state tax notices
+Price: From $1,500
+What it is:
+ We review your notice, research your account, and prepare an appropriate response to the IRS or state tax agency.
+Includes:
+Notice analysis and account research
+Written response preparation
+Direct IRS/state correspondence
+Power of Attorney filing (Form 2848)
+Follow-up until matter is resolved
+Who needs this:
+Received a CP notice or IRS letter
+Balance due notices
+Proposed adjustments or audits
+Missing return notices
+CTA: Get Started → /checkout?service=resolution&variant=notice
+
+CARD 2 (FEATURED)
+Featured Badge: Most Common
+Title: Audit Representation
+Best for: IRS or state audits, examinations
+Price: From $3,500
+What it is:
+ Full representation during IRS or state audit proceedings, from initial contact through resolution.
+Includes:
+Audit defense strategy development
+Document preparation and organization
+Direct communication with auditor on your behalf
+In-person or virtual audit representation
+Appeals representation if needed
+Negotiation of audit findings
+Who needs this:
+Under IRS or state audit
+Document requests received
+Field audit scheduled
+Correspondence audit notice
+CTA: Start Audit Defense → /checkout?service=resolution&variant=audit
+
+CARD 3
+Title: Back Tax Resolution
+Best for: Multiple years unfiled, large balances, liens/levies
+Price: Custom (typically $5,000+)
+What it is:
+ Comprehensive resolution for serious tax problems including unfiled returns, collection actions, offers in compromise, and payment plans.
+Includes:
+Complete account assessment
+Unfiled return preparation (if needed)
+Collection alternative analysis (OIC, installment agreement, CNC)
+Lien/levy release negotiation
+Penalty abatement requests
+Long-term compliance planning
+Who needs this:
+Years of unfiled returns
+Tax liens or levies in place
+Wage garnishment or bank levy
+Large balance owed (over $50,000)
+CTA: Request Assessment → /checkout?service=resolution&variant=backtax
+
+SECTION 5 — WHAT WE HANDLE
+Section Heading:
+ Common IRS Problems We Solve
+Layout: 6-tile grid
+Tiles:
+📨 IRS Notices & Letters
+ CP2000, CP504, Letter 525, and all other IRS correspondence
+
+
+🔍 Audits & Examinations
+ Individual, business, and correspondence audits at federal and state levels
+
+
+💰 Unpaid Taxes & Back Returns
+ Multiple years unfiled, late filing penalties, failure to pay penalties
+
+
+⚠️ Levies & Liens
+ Bank levies, wage garnishments, federal tax liens, asset seizures
+
+
+🤝 Payment Plans & Settlements
+ Installment agreements, offers in compromise, currently not collectible status
+
+
+📋 Penalty Abatement
+ First-time penalty abatement, reasonable cause requests, administrative waivers
+
+
+
+SECTION 6 — PROCESS
+Section Heading:
+ How Tax Resolution Works
+Steps:
+Step 1: Free Consultation
+ We review your situation, notices, and IRS account status at no cost or obligation.
+Step 2: Case Strategy
+ We develop a resolution strategy and provide transparent pricing for your specific situation.
+Step 3: Power of Attorney
+ We file Form 2848 to represent you directly with the IRS. You no longer have to deal with them.
+Step 4: Resolution
+ We handle all communication, negotiate on your behalf, and work toward the best possible outcome.
+
+SECTION 7 — FAQ
+Q1: What happens if I ignore an IRS notice?
+A1:
+ Ignoring IRS notices escalates the situation. The IRS can assess additional penalties, file liens, levy your bank accounts, or garnish wages. Every notice has a response deadline—it's critical to act quickly.
+Q2: Can you stop a wage garnishment or bank levy?
+A2:
+ Yes. We can request levy releases and negotiate alternative collection methods like installment agreements. Time is critical—contact us immediately if you've received a levy notice.
+Q3: What is an Offer in Compromise?
+A3:
+ An OIC allows you to settle your tax debt for less than the full amount owed if you meet specific financial hardship criteria. We evaluate your eligibility and prepare the application if appropriate.
+Q4: How long does tax resolution take?
+A4:
+ Simple notice responses: 2-4 weeks. Audits: 3-6 months. Complex resolution (OIC, multiple years): 6-12 months. Timeline varies based on IRS workload and case complexity.
+Q5: Do I need to speak with the IRS myself?
+A5:
+ No. Once we file Power of Attorney (Form 2848), all IRS communication goes through us. You won't need to speak with IRS agents directly.
+Q6: What if I haven't filed taxes in years?
+A6:
+ We can prepare prior-year returns and negotiate resolution for both filing and payment obligations. The IRS typically requires 6 years of back returns before considering collection alternatives.
+
+SECTION 8 — FINAL CTA
+Heading: Don't Face the IRS Alone
+Subheading: Get expert representation and peace of mind. Free consultation, no obligation.
+Primary Button: Get Help Now → #pricing
+ Secondary Button: Free Consultation → [CALENDLY_TAX_RESOLUTION_LINK]
+
+SECTION 9 — FOOTER CONFIDENCE LINE
+All services are provided by Eazytaxes Inc., a US-based tax, assurance, and advisory firm.
+
+DESIGN NOTES
+Color Palette:
+Primary: Red gradient (#dc2626 to #ef4444)
+Accent: Red (#dc2626)
+Urgency bar: Amber (#fef3c7 with dark text)
+Tone:
+Urgent but reassuring
+Professional but empathetic
+Action-focused (clear CTAs)
+
+PAGE 2: CFO & ADVISORY SERVICES
+URL: https://eazytaxes.com/cfo-advisory
+
+SECTION 1 — HERO
+Layout:
+ Full-width hero with purple/teal gradient (#6366f1 to #14b8a6), white text, centered.
+Content:
+Heading (H1):
+ Fractional CFO Services for Growing Businesses
+
+
+Subheading:
+ Strategic financial leadership without the full-time cost. Get expert CFO guidance tailored to your business stage.
+
+
+Primary CTA: Get Started → #pricing
+
+
+Secondary CTA: Book Discovery Call → [CALENDLY_CFO_LINK]
+
+
+
+SECTION 2 — TRUST BAR
+Stats:
+Stat 1:
+Number: 50+
+Label: Companies Advised
+Stat 2:
+Number: $200M+
+Label: Capital Raised (Clients Combined)
+Stat 3:
+Number: 20+ Years
+Label: Combined CFO Experience
+
+SECTION 3 — PRICING
+Section Heading: Choose Your Engagement Level
+Section Subheading: Flexible CFO support that scales with your business
+CARD 1
+Title: Advisory (10 hours/month)
+Best for: Early-stage startups, basic financial oversight
+Price: $3,500/month
+Includes:
+Monthly financial review and KPI tracking
+Cash flow forecasting and management
+Basic financial modeling
+Quarterly board materials preparation
+Email/Slack support
+One strategy call per month
+CTA: Start Advisory → /checkout?service=cfo&variant=advisory
+
+CARD 2 (FEATURED)
+Featured Badge: Most Popular
+Title: Strategic CFO (20 hours/month)
+Best for: Growth-stage companies, fundraising prep
+Price: $6,500/month
+Includes:
+Everything in Advisory, plus:
+Fundraising strategy and investor materials
+3-statement financial model
+Unit economics and cohort analysis
+Monthly management reporting package
+Bi-weekly strategy calls
+Participation in key meetings
+CTA: Start Strategic CFO → /checkout?service=cfo&variant=strategic
+
+CARD 3
+Title: Full-Service CFO (40+ hours/month)
+Best for: Scale-ups, complex operations, M&A activity
+Price: Custom (from $12,000/month)
+Includes:
+Everything in Strategic CFO, plus:
+Team management (accounting, FP&A)
+M&A financial due diligence
+Complex fundraising (Series A+)
+Audit coordination
+Board participation
+Strategic planning facilitation
+CTA: Request Proposal → /contact
+
+SECTION 4 — WHAT WE DO
+Section Heading: CFO Services We Provide
+6 Tiles:
+📊 Financial Planning & Analysis
+ Budget vs. actual, forecasting, scenario modeling, KPI dashboards
+
+
+💰 Fundraising Support
+ Pitch deck financials, data room prep, investor questions, cap table management
+
+
+📈 Strategic Planning
+ Annual planning, growth strategy, pricing analysis, market expansion modeling
+
+
+🏦 Cash Management
+ Cash flow forecasting, working capital optimization, banking relationships
+
+
+👥 Team Building
+ Accounting team oversight, FP&A hiring, process documentation
+
+
+🔄 M&A & Transactions
+ Buy-side/sell-side diligence, valuation support, deal structure analysis
+
+
+
+SECTION 5 — WHO WE WORK WITH
+Section Heading: Who Needs a Fractional CFO?
+Two Column Grid:
+Column 1 - Company Stage:
+Pre-seed and seed stage startups
+Series A/B growth companies
+Bootstrapped profitable businesses
+Companies preparing for fundraising
+Businesses planning exits or acquisitions
+Column 2 - Common Triggers:
+Raised or raising capital
+Revenue $1M-$50M annual
+Board requesting better financials
+Outgrown your bookkeeper's capabilities
+Need strategic finance, not just accounting
+
+SECTION 6 — PROCESS
+How It Works (4 Steps):
+Step 1: Discovery Call
+ We discuss your business, current state, and financial needs
+Step 2: Scope & Proposal
+ Custom engagement plan with clear deliverables and pricing
+Step 3: Onboarding
+ Access to systems, context gathering, initial assessment (Week 1)
+Step 4: Ongoing Partnership
+ Regular deliverables, strategic counsel, and proactive guidance
+
+SECTION 7 — FAQ
+Q1: What's the difference between a CFO and a bookkeeper/accountant?
+A1:
+ Bookkeepers record transactions. Accountants ensure compliance and produce financial statements. CFOs provide strategic financial leadership—forecasting, fundraising, modeling, and helping you make better business decisions.
+Q2: Do I need a full-time CFO or fractional CFO?
+A2:
+ If your revenue is under $50M and you don't need 40+ hours/week of strategic finance work, fractional is more cost-effective. You get senior-level expertise at a fraction of the cost.
+Q3: Can you work with our existing accounting team?
+A3:
+ Yes. We collaborate with your bookkeeper, controller, or accounting firm. We focus on strategy and analysis while they handle day-to-day transaction processing.
+Q4: Do you help with fundraising?
+A4:
+ Yes. We build financial models, create investor-ready materials, prepare data rooms, and help you answer investor diligence questions confidently.
+Q5: What tools do you use?
+A5:
+ We're platform-agnostic and work with QuickBooks, Xero, NetSuite, Google Sheets, Excel, and most modern finance tools. We adapt to your existing stack.
+
+SECTION 8 — FINAL CTA
+Heading: Ready for Strategic Financial Leadership?
+Subheading: Book a discovery call to discuss how fractional CFO services can accelerate your growth.
+Buttons:
+Get Started → #pricing
+Book Discovery Call → [CALENDLY_CFO_LINK]
+
+FOOTER CONFIDENCE LINE
+All services are provided by Eazytaxes Inc., a US-based tax, assurance, and advisory firm.
+
+DESIGN NOTES
+Color Palette:
+Primary: Purple/teal gradient (#6366f1 to #14b8a6)
+Modern, growth-focused aesthetic
+Professional but approachable
+
+PAGE 3: VALUATIONS (409A)
+URL: https://eazytaxes.com/valuations-409a
+
+SECTION 1 — HERO
+Layout:
+ Gradient background (#7c3aed to #2563eb), professional tone.
+Content:
+Heading (H1):
+ 409A Valuations for Startups
+
+
+Subheading:
+ IRS-compliant equity valuations to issue stock options safely. Fast turnaround, defensible methodology.
+
+
+Primary CTA: Get Quote → #pricing
+
+
+Secondary CTA: Schedule Consultation → [CALENDLY_VALUATIONS_LINK]
+
+
+
+SECTION 2 — TRUST BAR
+Stats:
+Stat 1:
+Number: 150+
+Label: 409A Valuations Completed
+Stat 2:
+Number: 7 Days
+Label: Average Turnaround Time
+Stat 3:
+Number: Zero
+Label: IRS Challenges to Our Valuations
+
+SECTION 3 — PRICING
+Section Heading: 409A Valuation Pricing
+Section Subheading: Transparent pricing based on company stage and complexity
+CARD 1
+Title: Seed Stage
+Best for: Pre-revenue, pre-Series A, <$5M raised
+Price: $2,500
+Includes:
+Full 409A valuation report
+Safe harbor compliant methodology
+12-month validity period
+Support for one option grant cycle
+Email support for questions
+Typical use cases:
+First 409A valuation
+Early employee option grants
+Convertible note or SAFE financing
+CTA: Get Started → /checkout?service=valuations&variant=seed
+
+CARD 2 (FEATURED)
+Featured Badge: Most Common
+Title: Series A / Growth
+Best for: Series A-B, $5M-$25M raised, growing operations
+Price: $4,000
+Includes:
+Comprehensive valuation analysis
+Market approach and income approach consideration
+Support for multiple grant cycles
+Waterfall analysis if complex cap table
+Phone/video consultation included
+Typical use cases:
+Post-Series A 409A update
+Preparing for next fundraise
+Secondary transaction planning
+CTA: Get Started → /checkout?service=valuations&variant=growth
+
+CARD 3
+Title: Late Stage / Complex
+Best for: Series B+, >$25M raised, complex structures
+Price: Custom (from $6,000)
+Includes:
+Advanced valuation modeling
+Multiple share class analysis
+Preferred stock rights modeling
+M&A scenario analysis
+Unlimited consultation
+Expedited delivery available
+Typical use cases:
+Late-stage companies
+Complex liquidation preferences
+Pre-IPO or pre-M&A planning
+CTA: Request Quote → /contact
+
+SECTION 4 — WHY YOU NEED A 409A
+Section Heading: Why Startups Need 409A Valuations
+Content (4 Cards):
+Card 1: IRS Compliance
+ Section 409A requires companies to set option strike prices at fair market value. A formal valuation provides safe harbor protection.
+Card 2: Avoid Penalties
+ Incorrect option pricing can trigger 20% penalties plus interest for employees. A proper 409A protects your team.
+Card 3: Investor Expectations
+ Investors and acquirers expect compliant 409A valuations. It's standard practice for venture-backed companies.
+Card 4: Future Fundraising
+ A recent 409A is often required during due diligence for fundraising or M&A transactions.
+
+SECTION 5 — WHAT'S INCLUDED
+Section Heading: What You Get in a 409A Valuation
+6 Tiles:
+📄 Full Valuation Report
+ Detailed report with methodology, assumptions, and fair market value conclusion
+
+
+🛡️ Safe Harbor Protection
+ IRS safe harbor compliance using accepted valuation methods
+
+
+📊 Cap Table Analysis
+ Review of equity structure, preferences, and liquidation waterfalls
+
+
+📈 Market Data
+ Comparable company analysis and relevant market multiples
+
+
+✅ Board Resolution Template
+ Sample language for board approval of option grants
+
+
+💬 Ongoing Support
+ Questions answered throughout the 12-month validity period
+
+
+
+SECTION 6 — PROCESS
+How 409A Works (4 Steps):
+Step 1: Kickoff (Day 1)
+ We send you a detailed information request list (financials, cap table, recent fundraising docs)
+Step 2: Analysis (Days 2-5)
+ Our team performs valuation analysis using income, market, and asset approaches
+Step 3: Draft Review (Day 6)
+ You receive draft report for review and feedback
+Step 4: Final Delivery (Day 7)
+ Final report delivered with board resolution template
+Timeline: 7-10 business days typical turnaround
+
+SECTION 7 — FAQ
+Q1: When do I need a 409A valuation?
+A1:
+ You need a 409A before issuing your first stock options and then: (1) at least every 12 months, (2) within 30 days of a material event (fundraise, M&A offer, major milestone), or (3) when your prior 409A expires.
+Q2: How long is a 409A valid?
+A2:
+ 409A valuations are valid for 12 months OR until a material event occurs (whichever comes first). Material events include fundraising, significant revenue changes, or M&A offers.
+Q3: What information do you need from us?
+A3:
+ We need: current cap table, recent financial statements (past 2 years + projections), recent fundraising documents (if any), and company overview (business model, products, market).
+Q4: Can we expedite the process?
+A4:
+ Yes. For an additional fee, we can deliver in 3-5 business days. Contact us to discuss expedited timing.
+Q5: What valuation methods do you use?
+A5:
+ We use the Option Pricing Method (OPM) or Probability-Weighted Expected Return Method (PWERM) depending on your stage. We may also consider market multiples and discounted cash flow analysis.
+Q6: Will this affect my next fundraising valuation?
+A6:
+ No. 409A values common stock for option pricing. Preferred stock (what investors buy) is valued differently and typically higher due to liquidation preferences and other rights.
+
+SECTION 8 — FINAL CTA
+Heading: Get Your 409A Valuation
+Subheading: Compliant, defensible valuations delivered in 7-10 days.
+Buttons:
+Get Quote → #pricing
+Schedule Consultation → [CALENDLY_VALUATIONS_LINK]
+
+FOOTER CONFIDENCE LINE
+All services are provided by Eazytaxes Inc., a US-based tax, assurance, and advisory firm.
+
+DESIGN NOTES
+Color Palette:
+Primary: Purple/blue gradient (#7c3aed to #2563eb)
+Professional, technical tone
+Emphasize compliance and credibility
+
+PAGE 4: US FORMATION & BANKING
+URL: https://eazytaxes.com/us-formation
+
+SECTION 1 — HERO
+Layout:
+ Green/blue gradient (#059669 to #0284c7), clean and welcoming.
+Content:
+Heading (H1):
+ Start Your US Business the Right Way
+
+
+Subheading:
+ Entity formation, EIN, and US bank account setup for international founders and cross-border businesses.
+
+
+Primary CTA: Get Started → #pricing
+
+
+Secondary CTA: Schedule Consultation → [CALENDLY_FORMATION_LINK]
+
+
+
+SECTION 2 — TRUST BAR
+Stats:
+Stat 1:
+Number: 300+
+Label: US Entities Formed
+Stat 2:
+Number: 40+
+Label: Countries Represented
+Stat 3:
+Number: 2-3 Weeks
+Label: Average Setup Time
+
+SECTION 3 — PRICING
+Section Heading: Formation Packages
+Section Subheading: Everything you need to start operating in the US
+CARD 1
+Title: LLC Formation
+Best for: Freelancers, consultants, small operations
+Price: $1,500
+Includes:
+LLC formation in Delaware or Wyoming
+EIN (Employer Identification Number)
+Operating Agreement template
+Registered agent service (1 year)
+State filing fees included
+Formation documents delivered
+What you can do:
+Open US bank account
+Accept US payments
+Contract with US clients
+Build US credit history
+CTA: Form LLC → /checkout?service=formation&variant=llc
+
+CARD 2 (FEATURED)
+Featured Badge: Most Popular
+Title: C-Corp Formation
+Best for: Startups seeking venture capital, stock option plans
+Price: $2,500
+Includes:
+C-Corporation formation in Delaware
+EIN (Employer Identification Number)
+Bylaws and organizational resolutions
+Stock issuance documentation
+Registered agent service (1 year)
+83(b) election guidance
+State filing fees included
+What you can do:
+Raise venture capital
+Issue stock options to employees
+Optimal structure for US investors
+Full US tax entity status
+CTA: Form C-Corp → /checkout?service=formation&variant=ccorp
+
+CARD 3
+Title: Full Setup (Formation + Banking)
+Best for: International founders needing complete US presence
+Price: $3,500
+Includes:
+Everything in LLC or C-Corp package, plus:
+US bank account application support
+Mercury or Brex account setup assistance
+Stripe/payment processor setup guidance
+Initial tax compliance consultation
+Bookkeeping system recommendations
+What you can do:
+Accept US payments immediately
+Pay US contractors and employees
+Access US payment processors
+Establish US business presence
+CTA: Full Setup → /checkout?service=formation&variant=full
+
+SECTION 4 — WHY FORM A US ENTITY?
+Section Heading: Benefits of US Entity Formation
+6 Tiles:
+💳 Access US Banking
+ Open business bank accounts, accept ACH/wire, use Stripe and other US payment processors
+
+
+🤝 Easier US Contracting
+ US companies prefer working with US entities for tax and legal simplicity
+
+
+📈 Venture Capital Ready
+ Delaware C-Corps are the standard structure for VC funding and startup investments
+
+
+🛡️ Liability Protection
+ Personal asset protection through proper corporate structure
+
+
+💰 Build US Credit
+ Establish business credit history for future financing and vendor relationships
+
+
+🌎 Global Expansion
+ US presence signals credibility to international clients and partners
+
+
+
+SECTION 5 — ENTITY COMPARISON
+Section Heading: LLC vs. C-Corp: Which is Right for You?
+Comparison Table:
+Feature
+LLC
+C-Corp
+Best For
+Services, consulting, solo/small teams
+Venture-backed startups, equity compensation
+Taxation
+Pass-through (profits taxed once)
+Double taxation (corp + dividends)
+Stock Options
+Not typical
+Yes, common for employee equity
+VC Funding
+Uncommon
+Standard structure
+Simplicity
+Easier compliance
+More formalities required
+Foreign Ownership
+Fully allowed
+Fully allowed
+Our Recommendation
+B2B services, consulting
+Tech startups, growth companies
+
+Dev note: Make this table mobile-responsive
+
+SECTION 6 — PROCESS
+How Formation Works (4 Steps):
+Step 1: Entity Selection & Payment
+ Choose LLC or C-Corp based on your business goals. Complete purchase and questionnaire.
+Step 2: Document Preparation (Days 1-3)
+ We prepare and file formation documents with the state. You receive draft operating agreement or bylaws.
+Step 3: EIN & State Filings (Days 4-7)
+ We obtain your EIN from the IRS and handle all state registrations.
+Step 4: Delivery & Banking Setup (Days 8-14)
+ All formation documents delivered. We guide you through US bank account applications.
+Total Timeline: 2-3 weeks from start to operational
+
+SECTION 7 — WHO WE HELP
+Section Heading: Who Forms US Entities?
+Two Column Grid:
+Column 1 - Common Scenarios:
+International founders starting US operations
+Remote teams wanting US banking
+SaaS companies needing Stripe access
+Agencies serving US clients
+Startups preparing for US fundraising
+Column 2 - Countries We've Worked With:
+India, Pakistan, Bangladesh (South Asia)
+UK, Germany, France (Europe)
+Nigeria, Kenya, South Africa (Africa)
+Philippines, Vietnam, Indonesia (Southeast Asia)
+Brazil, Mexico, Argentina (Latin America)
+
+SECTION 8 — FAQ
+Q1: Can non-US residents own a US company?
+A1:
+ Yes. There are no citizenship or residency requirements to form and own a US LLC or C-Corp. You don't need a US address, SSN, or visa.
+Q2: Which state should I incorporate in?
+A2:
+ Delaware for C-Corps (industry standard, VC-preferred). Delaware or Wyoming for LLCs (favorable laws, privacy protections). We'll guide you based on your situation.
+Q3: Can I open a US bank account remotely?
+A3:
+ Yes. Mercury, Brex, and Relay offer remote account opening for US entities. We provide application support and introduce you to these banking partners.
+Q4: Do I need to visit the US to set this up?
+A4:
+ No. The entire formation process is remote. Bank accounts can also be opened remotely with digital-first banks.
+Q5: What ongoing compliance is required?
+A5:
+ Delaware requires an annual report ($300/year for corps, $300/year for LLCs) plus registered agent fees. You'll also need to file federal tax returns annually. We can handle ongoing compliance if needed.
+Q6: How is a US entity taxed?
+A6:
+ LLCs: typically pass-through (no entity-level tax). C-Corps: 21% federal corporate tax. If you're a non-US resident owner with no US operations, you may have minimal US tax obligations. We provide tax consultation to explain your specific situation.
+
+SECTION 9 — FINAL CTA
+Heading: Ready to Start Your US Business?
+Subheading: Formation, EIN, and banking support—all in one place.
+Buttons:
+Get Started → #pricing
+Schedule Consultation → [CALENDLY_FORMATION_LINK]
+
+FOOTER CONFIDENCE LINE
+All services are provided by Eazytaxes Inc., a US-based tax, assurance, and advisory firm.
+
+DESIGN NOTES
+Color Palette:
+Primary: Green/blue gradient (#059669 to #0284c7)
+Welcoming, international-friendly tone
+Emphasize accessibility for non-US founders
+
+GLOBAL DESIGN SYSTEM NOTES
+All service pages should follow this structure:
+Hero with gradient background (unique color per service)
+Trust bar with 3 stats
+Pricing cards (3 options, middle card featured)
+What's included / benefits section (6 tiles)
+Process / how it works (4 steps)
+Comparison or use case section
+FAQ (6-7 questions minimum)
+Final CTA
+Footer confidence line
+Consistent Elements:
+Max-width containers (1200px)
+Responsive grids (3-col → 1-col on mobile)
+Hover effects on all cards
+Smooth scroll to #pricing
+Featured badge on middle pricing card
+Icons/emojis for visual interest
+Typography:
+H1: 3-3.5rem, bold
+H2: 2.5rem, bold
+H3: 1.8rem
+Body: 1rem, line-height 1.6
+Buttons: 1.05rem, bold
+Button Styles:
+Primary: White background with service color text
+Secondary: Transparent with white border
+Border-radius: 8px
+Padding: 16px 40px
+Hover: translateY(-2px) + shadow
+

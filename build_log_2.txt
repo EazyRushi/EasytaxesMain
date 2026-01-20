@@ -1,0 +1,753 @@
+
+> rest-express@1.0.0 build D:\Eazytaxes\proj1\Eazytaxes.com-next
+> tsx script/build.ts
+
+building client...
+[36mvite v7.3.0 [32mbuilding client environment for production...[36m[39m
+transforming...
+
+[1m[33mwarn[39m[22m - The class `duration-[400ms]` is ambiguous and matches multiple utilities.
+[1m[33mwarn[39m[22m - If this is content and not a class, replace it with `duration-&lsqb;400ms&rsqb;` to silence this warning.
+[32m✓[39m 4 modules transformed.
+[31m✗[39m Build failed in 1.64s
+[31m[vite:css] [postcss] D:/Eazytaxes/proj1/Eazytaxes.com-next/client/src/index.css:122:9: The `duration-[400ms]` class does not exist. If `duration-[400ms]` is a custom class, make sure it is defined within a `@layer` directive.[39m
+file: [36mD:/Eazytaxes/proj1/Eazytaxes.com-next/client/src/index.css:122:8[39m
+    at Input.error (D:\Eazytaxes\proj1\Eazytaxes.com-next\node_modules\postcss\lib\input.js:135:16)
+    at AtRule.error (D:\Eazytaxes\proj1\Eazytaxes.com-next\node_modules\postcss\lib\node.js:146:32)
+    at processApply (D:\Eazytaxes\proj1\Eazytaxes.com-next\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:380:29)
+    at D:\Eazytaxes\proj1\Eazytaxes.com-next\node_modules\tailwindcss\lib\lib\expandApplyAtRules.js:551:9
+    at D:\Eazytaxes\proj1\Eazytaxes.com-next\node_modules\tailwindcss\lib\processTailwindFeatures.js:55:50
+    at async plugins (D:\Eazytaxes\proj1\Eazytaxes.com-next\node_modules\tailwindcss\lib\plugin.js:38:17)
+    at async LazyResult.runAsync (D:\Eazytaxes\proj1\Eazytaxes.com-next\node_modules\postcss\lib\lazy-result.js:293:11)
+    at async runPostCSS (D:\Eazytaxes\proj1\Eazytaxes.com-next\node_modules\vite\dist\node\chunks\config.js:30144:19)
+    at async compilePostCSS (D:\Eazytaxes\proj1\Eazytaxes.com-next\node_modules\vite\dist\node\chunks\config.js:30128:6)
+    at async compileCSS (D:\Eazytaxes\proj1\Eazytaxes.com-next\node_modules\vite\dist\node\chunks\config.js:30058:26) {
+  name: 'CssSyntaxError',
+  reason: 'The `duration-[400ms]` class does not exist. If `duration-[400ms]` is a custom class, make sure it is defined within a `@layer` directive.',
+  file: 'D:/Eazytaxes/proj1/Eazytaxes.com-next/client/src/index.css',
+  source: '@tailwind base;\r\n' +
+    '@tailwind components;\r\n' +
+    '@tailwind utilities;\r\n' +
+    '\r\n' +
+    '@layer base {\r\n' +
+    '    :root {\r\n' +
+    '        /* Light Mode */\r\n' +
+    '        --background: 0 0% 100%;\r\n' +
+    '        /* #ffffff */\r\n' +
+    '        --foreground: 222 47% 11%;\r\n' +
+    '\r\n' +
+    '        --card: 0 0% 100%;\r\n' +
+    '        --card-foreground: 222 47% 11%;\r\n' +
+    '\r\n' +
+    '        --popover: 0 0% 100%;\r\n' +
+    '        --popover-foreground: 222 47% 11%;\r\n' +
+    '\r\n' +
+    '        --primary: 158 100% 28%;\r\n' +
+    '        /* #008f5d */\r\n' +
+    '        --primary-foreground: 210 40% 98%;\r\n' +
+    '\r\n' +
+    '        --secondary: 210 40% 96.1%;\r\n' +
+    '        --secondary-foreground: 222 47% 11.2%;\r\n' +
+    '\r\n' +
+    '        --muted: 210 40% 96.1%;\r\n' +
+    '        --muted-foreground: 215.4 16.3% 46.9%;\r\n' +
+    '\r\n' +
+    '        --accent: 154 88% 45%;\r\n' +
+    '        /* #0dd77d */\r\n' +
+    '        --accent-foreground: 222 47% 11.2%;\r\n' +
+    '\r\n' +
+    '        --destructive: 0 84.2% 60.2%;\r\n' +
+    '        --destructive-foreground: 210 40% 98%;\r\n' +
+    '\r\n' +
+    '        --border: 214.3 31.8% 91.4%;\r\n' +
+    '        --input: 214.3 31.8% 91.4%;\r\n' +
+    '        --ring: 158 100% 28%;\r\n' +
+    '\r\n' +
+    '        --radius: 0.5rem;\r\n' +
+    '\r\n' +
+    '        /* Chart/Sidebar variables mapping */\r\n' +
+    '        --chart-1: 12 76% 61%;\r\n' +
+    '        --chart-2: 173 58% 39%;\r\n' +
+    '        --chart-3: 197 37% 24%;\r\n' +
+    '        --chart-4: 43 74% 66%;\r\n' +
+    '        --chart-5: 27 87% 67%;\r\n' +
+    '\r\n' +
+    '        --sidebar-background: 0 0% 98%;\r\n' +
+    '        --sidebar-foreground: 240 5.3% 26.1%;\r\n' +
+    '        --sidebar-primary: 240 5.9% 10%;\r\n' +
+    '        --sidebar-primary-foreground: 0 0% 98%;\r\n' +
+    '        --sidebar-accent: 240 4.8% 95.9%;\r\n' +
+    '        --sidebar-accent-foreground: 240 5.9% 10%;\r\n' +
+    '        --sidebar-border: 220 13% 91%;\r\n' +
+    '        --sidebar-ring: 217.2 91.2% 59.8%;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .dark {\r\n' +
+    '        /* Dark Mode (Default as per design) */\r\n' +
+    '        --background: 0 0% 0%;\r\n' +
+    '        /* #000000 */\r\n' +
+    '        --foreground: 210 40% 98%;\r\n' +
+    '\r\n' +
+    '        --card: 222 47% 11%;\r\n' +
+    '        --card-foreground: 210 40% 98%;\r\n' +
+    '\r\n' +
+    '        --popover: 222 47% 11%;\r\n' +
+    '        --popover-foreground: 210 40% 98%;\r\n' +
+    '\r\n' +
+    '        --primary: 158 100% 28%;\r\n' +
+    '        /* #008f5d */\r\n' +
+    '        --primary-foreground: 210 40% 98%;\r\n' +
+    '\r\n' +
+    '        --secondary: 217.2 32.6% 17.5%;\r\n' +
+    '        --secondary-foreground: 210 40% 98%;\r\n' +
+    '\r\n' +
+    '        --muted: 217.2 32.6% 17.5%;\r\n' +
+    '        --muted-foreground: 215 20.2% 65.1%;\r\n' +
+    '\r\n' +
+    '        --accent: 154 88% 45%;\r\n' +
+    '        /* #0dd77d */\r\n' +
+    '        --accent-foreground: 210 40% 98%;\r\n' +
+    '\r\n' +
+    '        --destructive: 0 62.8% 30.6%;\r\n' +
+    '        --destructive-foreground: 210 40% 98%;\r\n' +
+    '\r\n' +
+    '        --border: 217.2 32.6% 17.5%;\r\n' +
+    '        --input: 217.2 32.6% 17.5%;\r\n' +
+    '        --ring: 158 100% 28%;\r\n' +
+    '\r\n' +
+    '        --chart-1: 220 70% 50%;\r\n' +
+    '        --chart-2: 160 60% 45%;\r\n' +
+    '        --chart-3: 30 80% 55%;\r\n' +
+    '        --chart-4: 280 65% 60%;\r\n' +
+    '        --chart-5: 340 75% 55%;\r\n' +
+    '\r\n' +
+    '        --sidebar-background: 240 5.9% 10%;\r\n' +
+    '        --sidebar-foreground: 240 4.8% 95.9%;\r\n' +
+    '        --sidebar-primary: 224.3 76.3% 48%;\r\n' +
+    '        --sidebar-primary-foreground: 0 0% 100%;\r\n' +
+    '        --sidebar-accent: 240 3.7% 15.9%;\r\n' +
+    '        --sidebar-accent-foreground: 240 4.8% 95.9%;\r\n' +
+    '        --sidebar-border: 240 3.7% 15.9%;\r\n' +
+    '        --sidebar-ring: 217.2 91.2% 59.8%;\r\n' +
+    '    }\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    '@layer base {\r\n' +
+    '    * {\r\n' +
+    '        @apply border-border;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    body {\r\n' +
+    '        @apply bg-background text-foreground;\r\n' +
+    '    }\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    '@layer components {\r\n' +
+    '\r\n' +
+    '    /* Buttons */\r\n' +
+    '    .btn {\r\n' +
+    '        @apply inline-flex items-center justify-center rounded-full font-sans font-semibold no-underline transition-all duration-[400ms] cursor-pointer border-none text-base px-9 py-4;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .btn-primary {\r\n' +
+    '        @apply bg-[#008f5d] text-white font-bold tracking-tight shadow-[0_10px_20px_-5px_rgba(0, 143, 93, 0.3)] border-[1.5px] border-white/10;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .btn-primary:hover {\r\n' +
+    '        @apply transform -translate-y-[2px] scale-[1.02] bg-[#00a86b] shadow-[0_15px_30px_-10px_rgba(0, 143, 93, 0.5)];\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .btn-xl {\r\n' +
+    '        @apply px-12 py-5 text-[1.15rem];\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .btn-hero-main {\r\n' +
+    '        @apply rounded-full shadow-[0_15px_35px_rgba(0, 70, 45, 0.2), inset_0_1px_0_rgba(255, 255, 255, 0.2)] border-none;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .btn-secondary {\r\n' +
+    '        @apply bg-transparent border border-white/10 text-foreground;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .btn-text-link {\r\n' +
+    '        @apply inline-block mt-6 text-accent no-underline font-bold text-base transition-all duration-300;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .btn-text-link:hover {\r\n' +
+    '        @apply opacity-80 underline;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    /* Hero Section */\r\n' +
+    '    .hero-centered-v2 {\r\n' +
+    '        @apply min-h-screen flex items-center justify-center text-center pt-[100px] bg-white relative overflow-hidden;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .dark .hero-centered-v2 {\r\n' +
+    '        background: radial-gradient(circle at center, #020d08 0%, #000000 100%);\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .hero-headline-v2 {\r\n' +
+    '        @apply text-5xl md:text-[5rem] font-extrabold leading-[1.05] tracking-tight text-slate-900 font-sans mb-6;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .dark .hero-headline-v2 {\r\n' +
+    '        @apply text-white;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .hero-outline {\r\n' +
+    '        @apply font-serif text-accent not-italic tracking-wide;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .dark .hero-outline {\r\n' +
+    '        @apply text-white/90;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .hero-copy-centered {\r\n' +
+    '        @apply text-[1.4rem] text-slate-500 max-w-[650px] mx-auto leading-relaxed;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .dark .hero-copy-centered {\r\n' +
+    '        @apply text-slate-400;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .hero-trust-proofs {\r\n' +
+    '        @apply flex justify-center items-center flex-wrap gap-x-5 gap-y-2.5 text-[0.85rem] font-bold text-slate-400 uppercase tracking-widest mb-6;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .hero-trust-proofs .separator {\r\n' +
+    '        @apply text-accent font-black;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    /* Animations */\r\n' +
+    '    .hero-wave-bg {\r\n' +
+    '        @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full z-[1] pointer-events-none opacity-100;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .hero-wave-bg svg {\r\n' +
+    '        @apply w-full h-full;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .wave-line {\r\n' +
+    '        @apply transition-all duration-500 stroke-[#0dd77d40] stroke-[1.5px];\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .dark .wave-line {\r\n' +
+    '        @apply stroke-white/15 stroke-[1px];\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .highlight-confidence {\r\n' +
+    '        @apply relative overflow-hidden;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .highlight-confidence::after {\r\n' +
+    "        content: '';\r\n" +
+    '        @apply absolute -top-1/2 -left-full w-2/5 h-[200%] bg-gradient-to-r from-transparent via-white/10 to-transparent transform rotate-[25deg] pointer-events-none;\r\n' +
+    '        animation: btnShimmer 4s cubic-bezier(0.19, 1, 0.22, 1) infinite;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    @keyframes btnShimmer {\r\n' +
+    '        0% {\r\n' +
+    '            left: -60%;\r\n' +
+    '        }\r\n' +
+    '\r\n' +
+    '        100% {\r\n' +
+    '            left: 160%;\r\n' +
+    '        }\r\n' +
+    '    }\r\n' +
+    '}',
+  line: 122,
+  column: 9,
+  endLine: 122,
+  endColumn: 185,
+  input: {
+    column: 9,
+    endColumn: 185,
+    endLine: 122,
+    endOffset: 3343,
+    line: 122,
+    offset: 3167,
+    source: '@tailwind base;\r\n' +
+      '@tailwind components;\r\n' +
+      '@tailwind utilities;\r\n' +
+      '\r\n' +
+      '@layer base {\r\n' +
+      '    :root {\r\n' +
+      '        /* Light Mode */\r\n' +
+      '        --background: 0 0% 100%;\r\n' +
+      '        /* #ffffff */\r\n' +
+      '        --foreground: 222 47% 11%;\r\n' +
+      '\r\n' +
+      '        --card: 0 0% 100%;\r\n' +
+      '        --card-foreground: 222 47% 11%;\r\n' +
+      '\r\n' +
+      '        --popover: 0 0% 100%;\r\n' +
+      '        --popover-foreground: 222 47% 11%;\r\n' +
+      '\r\n' +
+      '        --primary: 158 100% 28%;\r\n' +
+      '        /* #008f5d */\r\n' +
+      '        --primary-foreground: 210 40% 98%;\r\n' +
+      '\r\n' +
+      '        --secondary: 210 40% 96.1%;\r\n' +
+      '        --secondary-foreground: 222 47% 11.2%;\r\n' +
+      '\r\n' +
+      '        --muted: 210 40% 96.1%;\r\n' +
+      '        --muted-foreground: 215.4 16.3% 46.9%;\r\n' +
+      '\r\n' +
+      '        --accent: 154 88% 45%;\r\n' +
+      '        /* #0dd77d */\r\n' +
+      '        --accent-foreground: 222 47% 11.2%;\r\n' +
+      '\r\n' +
+      '        --destructive: 0 84.2% 60.2%;\r\n' +
+      '        --destructive-foreground: 210 40% 98%;\r\n' +
+      '\r\n' +
+      '        --border: 214.3 31.8% 91.4%;\r\n' +
+      '        --input: 214.3 31.8% 91.4%;\r\n' +
+      '        --ring: 158 100% 28%;\r\n' +
+      '\r\n' +
+      '        --radius: 0.5rem;\r\n' +
+      '\r\n' +
+      '        /* Chart/Sidebar variables mapping */\r\n' +
+      '        --chart-1: 12 76% 61%;\r\n' +
+      '        --chart-2: 173 58% 39%;\r\n' +
+      '        --chart-3: 197 37% 24%;\r\n' +
+      '        --chart-4: 43 74% 66%;\r\n' +
+      '        --chart-5: 27 87% 67%;\r\n' +
+      '\r\n' +
+      '        --sidebar-background: 0 0% 98%;\r\n' +
+      '        --sidebar-foreground: 240 5.3% 26.1%;\r\n' +
+      '        --sidebar-primary: 240 5.9% 10%;\r\n' +
+      '        --sidebar-primary-foreground: 0 0% 98%;\r\n' +
+      '        --sidebar-accent: 240 4.8% 95.9%;\r\n' +
+      '        --sidebar-accent-foreground: 240 5.9% 10%;\r\n' +
+      '        --sidebar-border: 220 13% 91%;\r\n' +
+      '        --sidebar-ring: 217.2 91.2% 59.8%;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .dark {\r\n' +
+      '        /* Dark Mode (Default as per design) */\r\n' +
+      '        --background: 0 0% 0%;\r\n' +
+      '        /* #000000 */\r\n' +
+      '        --foreground: 210 40% 98%;\r\n' +
+      '\r\n' +
+      '        --card: 222 47% 11%;\r\n' +
+      '        --card-foreground: 210 40% 98%;\r\n' +
+      '\r\n' +
+      '        --popover: 222 47% 11%;\r\n' +
+      '        --popover-foreground: 210 40% 98%;\r\n' +
+      '\r\n' +
+      '        --primary: 158 100% 28%;\r\n' +
+      '        /* #008f5d */\r\n' +
+      '        --primary-foreground: 210 40% 98%;\r\n' +
+      '\r\n' +
+      '        --secondary: 217.2 32.6% 17.5%;\r\n' +
+      '        --secondary-foreground: 210 40% 98%;\r\n' +
+      '\r\n' +
+      '        --muted: 217.2 32.6% 17.5%;\r\n' +
+      '        --muted-foreground: 215 20.2% 65.1%;\r\n' +
+      '\r\n' +
+      '        --accent: 154 88% 45%;\r\n' +
+      '        /* #0dd77d */\r\n' +
+      '        --accent-foreground: 210 40% 98%;\r\n' +
+      '\r\n' +
+      '        --destructive: 0 62.8% 30.6%;\r\n' +
+      '        --destructive-foreground: 210 40% 98%;\r\n' +
+      '\r\n' +
+      '        --border: 217.2 32.6% 17.5%;\r\n' +
+      '        --input: 217.2 32.6% 17.5%;\r\n' +
+      '        --ring: 158 100% 28%;\r\n' +
+      '\r\n' +
+      '        --chart-1: 220 70% 50%;\r\n' +
+      '        --chart-2: 160 60% 45%;\r\n' +
+      '        --chart-3: 30 80% 55%;\r\n' +
+      '        --chart-4: 280 65% 60%;\r\n' +
+      '        --chart-5: 340 75% 55%;\r\n' +
+      '\r\n' +
+      '        --sidebar-background: 240 5.9% 10%;\r\n' +
+      '        --sidebar-foreground: 240 4.8% 95.9%;\r\n' +
+      '        --sidebar-primary: 224.3 76.3% 48%;\r\n' +
+      '        --sidebar-primary-foreground: 0 0% 100%;\r\n' +
+      '        --sidebar-accent: 240 3.7% 15.9%;\r\n' +
+      '        --sidebar-accent-foreground: 240 4.8% 95.9%;\r\n' +
+      '        --sidebar-border: 240 3.7% 15.9%;\r\n' +
+      '        --sidebar-ring: 217.2 91.2% 59.8%;\r\n' +
+      '    }\r\n' +
+      '}\r\n' +
+      '\r\n' +
+      '@layer base {\r\n' +
+      '    * {\r\n' +
+      '        @apply border-border;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    body {\r\n' +
+      '        @apply bg-background text-foreground;\r\n' +
+      '    }\r\n' +
+      '}\r\n' +
+      '\r\n' +
+      '@layer components {\r\n' +
+      '\r\n' +
+      '    /* Buttons */\r\n' +
+      '    .btn {\r\n' +
+      '        @apply inline-flex items-center justify-center rounded-full font-sans font-semibold no-underline transition-all duration-[400ms] cursor-pointer border-none text-base px-9 py-4;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .btn-primary {\r\n' +
+      '        @apply bg-[#008f5d] text-white font-bold tracking-tight shadow-[0_10px_20px_-5px_rgba(0, 143, 93, 0.3)] border-[1.5px] border-white/10;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .btn-primary:hover {\r\n' +
+      '        @apply transform -translate-y-[2px] scale-[1.02] bg-[#00a86b] shadow-[0_15px_30px_-10px_rgba(0, 143, 93, 0.5)];\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .btn-xl {\r\n' +
+      '        @apply px-12 py-5 text-[1.15rem];\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .btn-hero-main {\r\n' +
+      '        @apply rounded-full shadow-[0_15px_35px_rgba(0, 70, 45, 0.2), inset_0_1px_0_rgba(255, 255, 255, 0.2)] border-none;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .btn-secondary {\r\n' +
+      '        @apply bg-transparent border border-white/10 text-foreground;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .btn-text-link {\r\n' +
+      '        @apply inline-block mt-6 text-accent no-underline font-bold text-base transition-all duration-300;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .btn-text-link:hover {\r\n' +
+      '        @apply opacity-80 underline;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    /* Hero Section */\r\n' +
+      '    .hero-centered-v2 {\r\n' +
+      '        @apply min-h-screen flex items-center justify-center text-center pt-[100px] bg-white relative overflow-hidden;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .dark .hero-centered-v2 {\r\n' +
+      '        background: radial-gradient(circle at center, #020d08 0%, #000000 100%);\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .hero-headline-v2 {\r\n' +
+      '        @apply text-5xl md:text-[5rem] font-extrabold leading-[1.05] tracking-tight text-slate-900 font-sans mb-6;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .dark .hero-headline-v2 {\r\n' +
+      '        @apply text-white;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .hero-outline {\r\n' +
+      '        @apply font-serif text-accent not-italic tracking-wide;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .dark .hero-outline {\r\n' +
+      '        @apply text-white/90;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .hero-copy-centered {\r\n' +
+      '        @apply text-[1.4rem] text-slate-500 max-w-[650px] mx-auto leading-relaxed;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .dark .hero-copy-centered {\r\n' +
+      '        @apply text-slate-400;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .hero-trust-proofs {\r\n' +
+      '        @apply flex justify-center items-center flex-wrap gap-x-5 gap-y-2.5 text-[0.85rem] font-bold text-slate-400 uppercase tracking-widest mb-6;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .hero-trust-proofs .separator {\r\n' +
+      '        @apply text-accent font-black;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    /* Animations */\r\n' +
+      '    .hero-wave-bg {\r\n' +
+      '        @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full z-[1] pointer-events-none opacity-100;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .hero-wave-bg svg {\r\n' +
+      '        @apply w-full h-full;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .wave-line {\r\n' +
+      '        @apply transition-all duration-500 stroke-[#0dd77d40] stroke-[1.5px];\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .dark .wave-line {\r\n' +
+      '        @apply stroke-white/15 stroke-[1px];\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .highlight-confidence {\r\n' +
+      '        @apply relative overflow-hidden;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    .highlight-confidence::after {\r\n' +
+      "        content: '';\r\n" +
+      '        @apply absolute -top-1/2 -left-full w-2/5 h-[200%] bg-gradient-to-r from-transparent via-white/10 to-transparent transform rotate-[25deg] pointer-events-none;\r\n' +
+      '        animation: btnShimmer 4s cubic-bezier(0.19, 1, 0.22, 1) infinite;\r\n' +
+      '    }\r\n' +
+      '\r\n' +
+      '    @keyframes btnShimmer {\r\n' +
+      '        0% {\r\n' +
+      '            left: -60%;\r\n' +
+      '        }\r\n' +
+      '\r\n' +
+      '        100% {\r\n' +
+      '            left: 160%;\r\n' +
+      '        }\r\n' +
+      '    }\r\n' +
+      '}',
+    url: 'file:///D:/Eazytaxes/proj1/Eazytaxes.com-next/client/src/index.css',
+    file: 'D:/Eazytaxes/proj1/Eazytaxes.com-next/client/src/index.css'
+  },
+  plugin: 'vite:css',
+  code: 'PLUGIN_ERROR',
+  loc: {
+    file: 'D:/Eazytaxes/proj1/Eazytaxes.com-next/client/src/index.css',
+    line: 122,
+    column: 8
+  },
+  pluginCode: '@tailwind base;\r\n' +
+    '@tailwind components;\r\n' +
+    '@tailwind utilities;\r\n' +
+    '\r\n' +
+    '@layer base {\r\n' +
+    '    :root {\r\n' +
+    '        /* Light Mode */\r\n' +
+    '        --background: 0 0% 100%;\r\n' +
+    '        /* #ffffff */\r\n' +
+    '        --foreground: 222 47% 11%;\r\n' +
+    '\r\n' +
+    '        --card: 0 0% 100%;\r\n' +
+    '        --card-foreground: 222 47% 11%;\r\n' +
+    '\r\n' +
+    '        --popover: 0 0% 100%;\r\n' +
+    '        --popover-foreground: 222 47% 11%;\r\n' +
+    '\r\n' +
+    '        --primary: 158 100% 28%;\r\n' +
+    '        /* #008f5d */\r\n' +
+    '        --primary-foreground: 210 40% 98%;\r\n' +
+    '\r\n' +
+    '        --secondary: 210 40% 96.1%;\r\n' +
+    '        --secondary-foreground: 222 47% 11.2%;\r\n' +
+    '\r\n' +
+    '        --muted: 210 40% 96.1%;\r\n' +
+    '        --muted-foreground: 215.4 16.3% 46.9%;\r\n' +
+    '\r\n' +
+    '        --accent: 154 88% 45%;\r\n' +
+    '        /* #0dd77d */\r\n' +
+    '        --accent-foreground: 222 47% 11.2%;\r\n' +
+    '\r\n' +
+    '        --destructive: 0 84.2% 60.2%;\r\n' +
+    '        --destructive-foreground: 210 40% 98%;\r\n' +
+    '\r\n' +
+    '        --border: 214.3 31.8% 91.4%;\r\n' +
+    '        --input: 214.3 31.8% 91.4%;\r\n' +
+    '        --ring: 158 100% 28%;\r\n' +
+    '\r\n' +
+    '        --radius: 0.5rem;\r\n' +
+    '\r\n' +
+    '        /* Chart/Sidebar variables mapping */\r\n' +
+    '        --chart-1: 12 76% 61%;\r\n' +
+    '        --chart-2: 173 58% 39%;\r\n' +
+    '        --chart-3: 197 37% 24%;\r\n' +
+    '        --chart-4: 43 74% 66%;\r\n' +
+    '        --chart-5: 27 87% 67%;\r\n' +
+    '\r\n' +
+    '        --sidebar-background: 0 0% 98%;\r\n' +
+    '        --sidebar-foreground: 240 5.3% 26.1%;\r\n' +
+    '        --sidebar-primary: 240 5.9% 10%;\r\n' +
+    '        --sidebar-primary-foreground: 0 0% 98%;\r\n' +
+    '        --sidebar-accent: 240 4.8% 95.9%;\r\n' +
+    '        --sidebar-accent-foreground: 240 5.9% 10%;\r\n' +
+    '        --sidebar-border: 220 13% 91%;\r\n' +
+    '        --sidebar-ring: 217.2 91.2% 59.8%;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .dark {\r\n' +
+    '        /* Dark Mode (Default as per design) */\r\n' +
+    '        --background: 0 0% 0%;\r\n' +
+    '        /* #000000 */\r\n' +
+    '        --foreground: 210 40% 98%;\r\n' +
+    '\r\n' +
+    '        --card: 222 47% 11%;\r\n' +
+    '        --card-foreground: 210 40% 98%;\r\n' +
+    '\r\n' +
+    '        --popover: 222 47% 11%;\r\n' +
+    '        --popover-foreground: 210 40% 98%;\r\n' +
+    '\r\n' +
+    '        --primary: 158 100% 28%;\r\n' +
+    '        /* #008f5d */\r\n' +
+    '        --primary-foreground: 210 40% 98%;\r\n' +
+    '\r\n' +
+    '        --secondary: 217.2 32.6% 17.5%;\r\n' +
+    '        --secondary-foreground: 210 40% 98%;\r\n' +
+    '\r\n' +
+    '        --muted: 217.2 32.6% 17.5%;\r\n' +
+    '        --muted-foreground: 215 20.2% 65.1%;\r\n' +
+    '\r\n' +
+    '        --accent: 154 88% 45%;\r\n' +
+    '        /* #0dd77d */\r\n' +
+    '        --accent-foreground: 210 40% 98%;\r\n' +
+    '\r\n' +
+    '        --destructive: 0 62.8% 30.6%;\r\n' +
+    '        --destructive-foreground: 210 40% 98%;\r\n' +
+    '\r\n' +
+    '        --border: 217.2 32.6% 17.5%;\r\n' +
+    '        --input: 217.2 32.6% 17.5%;\r\n' +
+    '        --ring: 158 100% 28%;\r\n' +
+    '\r\n' +
+    '        --chart-1: 220 70% 50%;\r\n' +
+    '        --chart-2: 160 60% 45%;\r\n' +
+    '        --chart-3: 30 80% 55%;\r\n' +
+    '        --chart-4: 280 65% 60%;\r\n' +
+    '        --chart-5: 340 75% 55%;\r\n' +
+    '\r\n' +
+    '        --sidebar-background: 240 5.9% 10%;\r\n' +
+    '        --sidebar-foreground: 240 4.8% 95.9%;\r\n' +
+    '        --sidebar-primary: 224.3 76.3% 48%;\r\n' +
+    '        --sidebar-primary-foreground: 0 0% 100%;\r\n' +
+    '        --sidebar-accent: 240 3.7% 15.9%;\r\n' +
+    '        --sidebar-accent-foreground: 240 4.8% 95.9%;\r\n' +
+    '        --sidebar-border: 240 3.7% 15.9%;\r\n' +
+    '        --sidebar-ring: 217.2 91.2% 59.8%;\r\n' +
+    '    }\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    '@layer base {\r\n' +
+    '    * {\r\n' +
+    '        @apply border-border;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    body {\r\n' +
+    '        @apply bg-background text-foreground;\r\n' +
+    '    }\r\n' +
+    '}\r\n' +
+    '\r\n' +
+    '@layer components {\r\n' +
+    '\r\n' +
+    '    /* Buttons */\r\n' +
+    '    .btn {\r\n' +
+    '        @apply inline-flex items-center justify-center rounded-full font-sans font-semibold no-underline transition-all duration-[400ms] cursor-pointer border-none text-base px-9 py-4;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .btn-primary {\r\n' +
+    '        @apply bg-[#008f5d] text-white font-bold tracking-tight shadow-[0_10px_20px_-5px_rgba(0, 143, 93, 0.3)] border-[1.5px] border-white/10;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .btn-primary:hover {\r\n' +
+    '        @apply transform -translate-y-[2px] scale-[1.02] bg-[#00a86b] shadow-[0_15px_30px_-10px_rgba(0, 143, 93, 0.5)];\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .btn-xl {\r\n' +
+    '        @apply px-12 py-5 text-[1.15rem];\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .btn-hero-main {\r\n' +
+    '        @apply rounded-full shadow-[0_15px_35px_rgba(0, 70, 45, 0.2), inset_0_1px_0_rgba(255, 255, 255, 0.2)] border-none;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .btn-secondary {\r\n' +
+    '        @apply bg-transparent border border-white/10 text-foreground;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .btn-text-link {\r\n' +
+    '        @apply inline-block mt-6 text-accent no-underline font-bold text-base transition-all duration-300;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .btn-text-link:hover {\r\n' +
+    '        @apply opacity-80 underline;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    /* Hero Section */\r\n' +
+    '    .hero-centered-v2 {\r\n' +
+    '        @apply min-h-screen flex items-center justify-center text-center pt-[100px] bg-white relative overflow-hidden;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .dark .hero-centered-v2 {\r\n' +
+    '        background: radial-gradient(circle at center, #020d08 0%, #000000 100%);\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .hero-headline-v2 {\r\n' +
+    '        @apply text-5xl md:text-[5rem] font-extrabold leading-[1.05] tracking-tight text-slate-900 font-sans mb-6;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .dark .hero-headline-v2 {\r\n' +
+    '        @apply text-white;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .hero-outline {\r\n' +
+    '        @apply font-serif text-accent not-italic tracking-wide;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .dark .hero-outline {\r\n' +
+    '        @apply text-white/90;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .hero-copy-centered {\r\n' +
+    '        @apply text-[1.4rem] text-slate-500 max-w-[650px] mx-auto leading-relaxed;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .dark .hero-copy-centered {\r\n' +
+    '        @apply text-slate-400;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .hero-trust-proofs {\r\n' +
+    '        @apply flex justify-center items-center flex-wrap gap-x-5 gap-y-2.5 text-[0.85rem] font-bold text-slate-400 uppercase tracking-widest mb-6;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .hero-trust-proofs .separator {\r\n' +
+    '        @apply text-accent font-black;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    /* Animations */\r\n' +
+    '    .hero-wave-bg {\r\n' +
+    '        @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full z-[1] pointer-events-none opacity-100;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .hero-wave-bg svg {\r\n' +
+    '        @apply w-full h-full;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .wave-line {\r\n' +
+    '        @apply transition-all duration-500 stroke-[#0dd77d40] stroke-[1.5px];\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .dark .wave-line {\r\n' +
+    '        @apply stroke-white/15 stroke-[1px];\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .highlight-confidence {\r\n' +
+    '        @apply relative overflow-hidden;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    .highlight-confidence::after {\r\n' +
+    "        content: '';\r\n" +
+    '        @apply absolute -top-1/2 -left-full w-2/5 h-[200%] bg-gradient-to-r from-transparent via-white/10 to-transparent transform rotate-[25deg] pointer-events-none;\r\n' +
+    '        animation: btnShimmer 4s cubic-bezier(0.19, 1, 0.22, 1) infinite;\r\n' +
+    '    }\r\n' +
+    '\r\n' +
+    '    @keyframes btnShimmer {\r\n' +
+    '        0% {\r\n' +
+    '            left: -60%;\r\n' +
+    '        }\r\n' +
+    '\r\n' +
+    '        100% {\r\n' +
+    '            left: 160%;\r\n' +
+    '        }\r\n' +
+    '    }\r\n' +
+    '}',
+  hook: 'transform',
+  id: 'D:/Eazytaxes/proj1/Eazytaxes.com-next/client/src/index.css',
+  watchFiles: [
+    'D:/Eazytaxes/proj1/Eazytaxes.com-next/client/index.html',
+    'D:/Eazytaxes/proj1/Eazytaxes.com-next/client/src/main.tsx',
+    'D:\\Eazytaxes\\proj1\\Eazytaxes.com-next\\package.json',
+    'D:/Eazytaxes/proj1/Eazytaxes.com-next/node_modules/react/jsx-runtime.js',
+    'D:/Eazytaxes/proj1/Eazytaxes.com-next/node_modules/react-dom/client.js',
+    'D:/Eazytaxes/proj1/Eazytaxes.com-next/client/src/App.tsx',
+    'D:/Eazytaxes/proj1/Eazytaxes.com-next/client/src/index.css',
+    'D:/Eazytaxes/proj1/Eazytaxes.com-next/node_modules/react/cjs/react-jsx-runtime.production.min.js',
+    'D:/Eazytaxes/proj1/Eazytaxes.com-next/node_modules/react-dom/index.js'
+  ]
+}
+ ELIFECYCLE  Command failed with exit code 1.

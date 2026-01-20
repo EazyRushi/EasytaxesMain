@@ -1,0 +1,117 @@
+# Gap Analysis: Implementation vs Content.txt
+
+## Global / General
+- **External Subdomains vs Internal Routes**: The "Home - Service Lines Grid" section in `content.txt` lists subdomains (e.g., `resolution.eazytaxes.com`) for service links, but the code implements internal routes (e.g., `/tax-resolution`). However, detailed page specs later in `content.txt` (e.g., "PAGE 1: TAX RESOLUTION SERVICES") use the internal URLs. *Recommendation: The internal routes (`/tax-resolution`, etc.) appear correct based on the presence of detailed page specs.*
+
+## Home Page (https://eazytaxes.com)
+- **Hero Secondary CTA**: Implementation includes "Explore services" button. Spec says "No secondary CTA needed on hero for now".
+- **Intro Section**:
+  - Spec: "Eazytaxes Inc. is a US-based professional services firm offering tax, compliance, assurance, and advisory services to businesses and individuals."
+  - Implementation: "We provide comprehensive tax and accounting solutions..." (Text differs).
+  - Implementation Deviation: Includes a 4-column stats grid not in the Home spec (though good for credibility, it's not in the requirements).
+- **Section 6 - Credentials/Positioning Strip**:
+  - Spec: "US-based professional services firm · Cross-border and domestic matters · Project-based and ongoing engagements"
+  - Implementation: Uses a stats strip ("IRS-certified professionals · 5,000+ returns filed...") instead.
+- **Section 7 - Who We Work With**:
+  - Spec: Bullet list ("Founders and owner-led businesses", etc.)
+  - Implementation: Missing. (Replaced by "Why Us" / Testimonials?)
+- **Section 8 - Engagements**:
+  - Spec: List of engagement types ("One-time engagements", etc.)
+  - Implementation: Missing.
+- **Section 9 - Jurisdiction / Scope Line**:
+  - Spec: "US regulatory and advisory work for domestic and international clients."
+  - Implementation: Missing.
+- **Final CTA**:
+  - Spec: Text "Ready to proceed?", Button "Start Here".
+  - Implementation: Text "Ready for Complete Financial Clarity?", Button "Book a Consultation" and "Get Started".
+
+## Tax & Compliance Page (/tax-compliance)
+- **Status**: ✅ **High Conformity**. The implementation closely matches the detailed specifications in `content.txt` (Hero, Pricing, Deliverables, Situations, Scope, Trust, Process, FAQ, and CTA all align).
+
+## Tax Resolution Page (/tax-resolution)
+- **Hero Section**:
+  - Spec H1: "Resolve Your IRS Tax Problems"
+  - Implementation H1: "Tax Resolution & Defense"
+  - CTA Spec: "Get Help Now" -> #pricing, "Free Consultation" -> Calendly.
+  - CTA Implementation: "Get Help Now" -> `/checkout...`, "Book a Call".
+- **Section 2 - Urgent Alert Bar**:
+  - Spec: Yellow bar "Received an IRS Notice? Time Matters..."
+  - Implementation: **Missing**.
+- **Section 3 - Trust Bar**:
+  - Spec: Stats ($2.5M+ tax debt resolved, etc.)
+  - Implementation: **Missing**.
+- **Section 5 - What We Handle**:
+  - Spec: 6 tiles (IRS Notices, Audits, Unpaid Taxes, etc.)
+  - Implementation: **Missing**. Replaced by a generic "Peace of Mind Includes" section.
+- **Section 6 - Process**:
+  - Spec: 4 steps (Consultation, Strategy, POA, Resolution).
+  - Implementation: 3 steps (Upload, Analyze, Represent).
+- **FAQ**:
+  - Spec: 6 questions.
+  - Implementation: 3 questions only. Missing Q4 (How long?), Q5 (Speak to IRS?), Q6 (Prior years?). (Note: Q5 in spec "Do I need to speak..." corresponds to Q1 in implementation, so some re-ordering exists, but total count is lower).
+- **Final CTA**:
+  - Spec Heading: "Don't Face the IRS Alone"
+  - Implementation Heading: "Stop worrying about the IRS"
+
+## Assurance & SOC 2 Page (/assurance-soc2)
+- **Concept Mismatch**: The spec is for "Assurance Services" (Audits, Reviews, Compilations) with SOC 2 mentioned as secondary. The implementation is heavily focused on "SOC 2 Type I / Type II".
+- **Hero**:
+  - Spec H1: "Financial Statement Assurance You Can Trust"
+  - Implementation H1: "Assurance & SOC 2"
+- **Trust Bar**: Spec stats missing.
+- **Pricing**:
+  - Spec: "Compilation", "Review", "Audit".
+  - Implementation: "SOC 2 Type I", "SOC 2 Type II", "Financial Review".
+- **Missing Sections**:
+  - Comparison Table (Compilation vs Review vs Audit) is **Missing**.
+  - Process Section **Missing**.
+  - "Who Needs Assurance" Section **Missing**.
+- **FAQ**: Spec has 7 questions; Implementation has 3.
+
+## CFO & Advisory Page (/cfo-advisory)
+- **Hero**:
+  - Spec H1: "Fractional CFO Services for Growing Businesses"
+  - Implementation H1: "CFO & Advisory Services"
+- **Trust Bar**: Spec stats missing.
+- **Pricing**:
+  - Spec: "Advisory" (10hr), "Strategic CFO" (20hr), "Full-Service CFO".
+  - Implementation: "Fractional CFO", "Controller Services", "Project Advisory". (Different conceptual breakdown).
+- **Missing Sections**:
+  - Process Section **Missing**.
+  - "Who We Work With" Section **Missing**.
+- **FAQ**: Spec has 5, Implementation has 3.
+
+## Valuations Page (/valuations)
+- **Concept Mismatch**: Spec focuses exclusively on "409A Valuations" tiered by company stage. Implementation broadens scope to include "Business Valuation" (M&A) and "Fairness Opinions".
+- **Hero**:
+  - Spec H1: "409A Valuations for Startups"
+  - Implementation H1: "Valuations & 409A"
+- **Trust Bar**: Spec stats missing.
+- **Pricing**:
+  - Spec: "Seed Stage", "Series A / Growth", "Late Stage". (Tiers of 409A).
+  - Implementation: "409A Valuation", "Business Valuation", "Fairness Opinion". (Different Service Types).
+- **Missing Sections**:
+  - "Why Startups Need 409A" Section **Missing**.
+  - Process Section **Missing**.
+- **FAQ**: Spec has 6, Implementation has 3.
+
+## US Formation Page (/us-formation)
+- **Hero**:
+  - Spec H1: "Start Your US Business the Right Way"
+  - Implementation H1: "US Formation & Banking"
+- **Trust Bar**: Spec stats missing.
+- **Pricing**:
+  - Spec: "LLC", "C-Corp", "Full Setup (Formation + Banking)".
+  - Implementation: "Delaware LLC", "C-Corp Formation", "Banking Setup" (Banking is a separate card, not a bundle).
+- **Missing Sections**:
+  - "Benefits of US Entity Formation" Section **Missing** (Replaced by "Included in Formation" deliverables).
+  - "Entity Comparison Table" (LLC vs C-Corp) is **Missing**.
+  - Process Section **Missing**.
+  - "Who We Help" (Countries list) is **Missing** (Replaced by Situations grid).
+- **FAQ**: Spec has 6, Implementation has 3.
+
+## Summary
+- **Tax Compliance**: Excellent adherence to spec.
+- **Tax Resolution**: Significant content gaps (Alert bar, Trust bar, Process, FAQ items).
+- **Assurance / CFO / Valuations / Formation**: These pages have structural divergences where the implementation often broadens the scope or changes the pricing model (e.g., offering different *types* of services rather than *tiers* of the same service), and they consistently lack the "Trust Bar", "Process", "Comparison Tables", and full "FAQ" lists specified in `content.txt`.
+
