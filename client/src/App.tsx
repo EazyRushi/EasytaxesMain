@@ -4,6 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollToTop from "@/components/ScrollToTop";
+import { WhatsAppFloat } from "@/components/ui/whatsapp-float";
 import NotFound from "@/pages/not-found";
 
 // Page Imports
@@ -50,6 +51,7 @@ function App() {
       <TooltipProvider>
         <Toaster />
         <ScrollToTop />
+        <WhatsAppFloat />
         <Router />
       </TooltipProvider>
     </QueryClientProvider>

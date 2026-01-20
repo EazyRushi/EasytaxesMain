@@ -41,11 +41,11 @@ export function Navbar() {
                 <span className={`absolute -bottom-1 left-0 h-0.5 bg-[#3FB9CB] transition-all duration-300 ${location === link.href ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
               </Link>
             ))}
-            <Link href="/contact">
-              <Button className="bg-[#3FB9CB] hover:bg-[#34a0b0] text-white font-bold px-7 h-11 rounded-sm text-sm uppercase tracking-wider shadow-lg shadow-[#3FB9CB]/10 transition-all active:scale-95">
+            <a href="https://calendly.com/eazytaxes" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-[#3FB9CB] hover:bg-[#34a0b0] text-white font-bold px-7 h-11 rounded-full text-sm uppercase tracking-wider shadow-lg shadow-[#3FB9CB]/20 transition-all hover:shadow-xl hover:-translate-y-0.5 active:scale-95">
                 Consultation
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}

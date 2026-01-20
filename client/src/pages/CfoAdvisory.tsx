@@ -97,14 +97,16 @@ export default function CfoAdvisory() {
                         transition={{ delay: 0.2 }}
                         className="flex flex-col sm:flex-row gap-4 justify-center items-center"
                     >
-                        <Link href="/checkout?service=cfo-advisory">
+                        <Link href="/contact?service=CFO Advisory#form">
                             <Button size="lg" className="bg-white text-[#059669] hover:bg-blue-50 border-0 font-bold px-8 h-14 rounded-xl text-lg shadow-lg">
                                 Engage Advisory
                             </Button>
                         </Link>
-                        <Button size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10 px-8 h-14 rounded-xl text-lg">
-                            Book a Call
-                        </Button>
+                        <Link href="/contact?service=CFO Advisory#form">
+                            <Button size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10 px-8 h-14 rounded-xl text-lg">
+                                Book a Call
+                            </Button>
+                        </Link>
                     </motion.div>
                 </div>
             </section>
@@ -147,7 +149,7 @@ export default function CfoAdvisory() {
                                 ))}
                             </ul>
 
-                            <Link href={`/checkout?service=cfo-advisory&variant=${opt.variant}`}>
+                            <Link href={`/contact?service=CFO Advisory&plan=${opt.title}#form`}>
                                 <Button className={`w-full h-12 rounded-xl font-semibold text-base shadow-lg transition-all hover:-translate-y-1 ${opt.featured ? 'bg-brand-gradient hover:brightness-110' : 'bg-slate-900 hover:bg-slate-800'}`}>
                                     {opt.cta}
                                 </Button>
@@ -181,7 +183,7 @@ export default function CfoAdvisory() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {situations.map((sit, i) => (
-                        <Link key={i} href={sit.link || `/checkout?service=cfo-advisory&case=${sit.case}`}>
+                        <Link key={i} href={sit.link || `/contact?service=CFO Advisory&plan=${sit.title}#form`}>
                             <div className="group bg-white p-6 rounded-xl border border-slate-200 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all cursor-pointer h-full flex flex-col justify-between">
                                 <div>
                                     <h3 className="font-bold text-slate-800 text-lg mb-2">{sit.title}</h3>
@@ -226,14 +228,16 @@ export default function CfoAdvisory() {
                 <div className="max-w-4xl mx-auto px-4">
                     <h2 className="text-4xl font-bold mb-8">Scale with confidence</h2>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                        <Link href="/checkout?service=cfo-advisory">
+                        <Link href="/contact?service=CFO Advisory#form">
                             <Button size="lg" className="bg-white text-[#059669] hover:bg-blue-50 border-0 font-bold px-10 h-14 rounded-xl text-lg shadow-xl hover:-translate-y-1 transition-all">
                                 Start Advisory
                             </Button>
                         </Link>
-                        <Button size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10 px-10 h-14 rounded-xl text-lg backdrop-blur-sm">
-                            Book a Call
-                        </Button>
+                        <Link href="/contact?service=CFO Advisory#form">
+                            <Button size="lg" variant="outline" className="bg-transparent border-white/30 text-white hover:bg-white/10 px-10 h-14 rounded-xl text-lg backdrop-blur-sm">
+                                Book a Call
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </section>

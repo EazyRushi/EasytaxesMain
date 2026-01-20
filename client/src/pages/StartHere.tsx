@@ -19,36 +19,36 @@ export default function StartHere() {
       title: "Tax Resolution",
       description: "IRS audit representation & notice response.",
       icon: <ShieldCheck className="w-6 h-6" />,
-      href: "https://resolution.eazytaxes.com",
-      isExternal: true
+      href: "/tax-resolution",
+      isExternal: false
     },
     {
       title: "Assurance & SOC 2",
       description: "Audits, reviews, and compliance reports.",
       icon: <CheckCircle2 className="w-6 h-6" />,
-      href: "https://soc.eazytaxes.com",
-      isExternal: true
+      href: "/assurance-soc2",
+      isExternal: false
     },
     {
       title: "CFO & Advisory",
       description: "Strategic planning and financial leadership.",
       icon: <Briefcase className="w-6 h-6" />,
-      href: "https://cfo.eazytaxes.com",
-      isExternal: true
+      href: "/cfo-advisory",
+      isExternal: false
     },
     {
       title: "Valuations",
       description: "409A valuations for equity compensation.",
       icon: <Calculator className="w-6 h-6" />,
-      href: "https://valuations.eazytaxes.com",
-      isExternal: true
+      href: "/valuations",
+      isExternal: false
     },
     {
       title: "Formation & Banking",
       description: "Launch your US entity and bank accounts.",
       icon: <Building2 className="w-6 h-6" />,
-      href: "https://formation.eazytaxes.com",
-      isExternal: true
+      href: "/us-formation",
+      isExternal: false
     }
   ];
 

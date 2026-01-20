@@ -35,8 +35,10 @@ export function ServiceCard({ title, description, icon, href, isExternal, featur
   }
 
   return (
-    <Link href={href} className="service-card group">
-      {CardContent}
+    <Link href={href}>
+      <div className="service-card group">
+        {CardContent}
+      </div>
     </Link>
   );
 }

@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ServiceCard } from "@/components/ui/service-card";
-import { IntroSection } from "@/components/ui/intro-section";
 
 export default function Home() {
   return (
@@ -45,9 +44,6 @@ export default function Home() {
                 <Link href="/start" className="btn btn-primary btn-xl btn-hero-main highlight-confidence w-full sm:w-auto">
                   Start Here
                 </Link>
-                <Link href="/tax-compliance" className="btn btn-secondary btn-xl w-full sm:w-auto">
-                  Explore services
-                </Link>
               </div>
               <p className="text-sm text-slate-400 font-medium">Takes only 2 minutes</p>
 
@@ -62,7 +58,13 @@ export default function Home() {
       </section>
 
       {/* Intro Section */}
-      <IntroSection />
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <p className="text-xl text-slate-600 leading-relaxed">
+            Eazytaxes Inc. is a US-based professional services firm offering tax, compliance, assurance, and advisory services to businesses and individuals.
+          </p>
+        </div>
+      </section>
 
       {/* Services Section */}
       <section className="py-24 bg-[#f8fafc] dark:bg-black/50">
@@ -128,6 +130,77 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+
+          {/* Global CTA under services grid */}
+          <div className="text-center mt-16">
+            <p className="text-lg text-slate-600 mb-4">Not sure which service applies?</p>
+            <Link href="/start">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold px-8">
+                Start Here
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Credentials / Positioning Strip */}
+      <section className="py-8 bg-slate-50 border-y border-slate-200">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-center text-sm text-slate-500">
+            US-based professional services firm · Cross-border and domestic matters · Project-based and ongoing engagements
+          </p>
+        </div>
+      </section>
+
+      {/* Who We Work With */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Who we work with</h2>
+          <ul className="space-y-4 text-lg text-slate-600">
+            <li className="flex items-start gap-3">
+              <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
+              <span>Founders and owner-led businesses</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
+              <span>Growing companies with US operations</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
+              <span>Cross-border individuals and families</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <CheckCircle2 className="w-6 h-6 text-primary shrink-0 mt-1" />
+              <span>Teams requiring ongoing compliance or advisory support</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Engagements */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-4xl mx-auto px-6">
+          <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Engagements</h2>
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-2">One-time engagements</h3>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-2">Ongoing advisory relationships</h3>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold text-slate-900 mb-2">Project-based and recurring work</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Jurisdiction / Scope Line */}
+      <section className="py-8 bg-white border-y border-slate-200">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="text-center text-sm text-slate-500">
+            US regulatory and advisory work for domestic and international clients.
+          </p>
         </div>
       </section>
 
@@ -228,19 +301,11 @@ export default function Home() {
       <section className="py-32 bg-[#0f172a] text-white text-center relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[100px]"></div>
         <div className="relative max-w-4xl mx-auto px-4">
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">Ready for Complete Financial Clarity?</h2>
-          <p className="text-slate-400 text-xl mb-12 max-w-2xl mx-auto">
-            Book your consultation today and experience a higher standard of tax and accounting service.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-5 justify-center">
-            <Link href="/contact">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold px-12 h-14 rounded-md text-lg w-full sm:w-auto">
-                Book a Consultation
-              </Button>
-            </Link>
+          <h2 className="text-4xl md:text-5xl font-bold mb-8">Ready to proceed?</h2>
+          <div className="flex justify-center">
             <Link href="/start">
-              <Button size="lg" variant="outline" className="border-slate-700 text-white hover:bg-slate-800 px-12 h-14 rounded-md text-lg w-full sm:w-auto">
-                Get Started
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-bold px-12 h-14 rounded-md text-lg">
+                Start Here
               </Button>
             </Link>
           </div>
