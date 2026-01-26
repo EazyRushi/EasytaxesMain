@@ -76,7 +76,8 @@ Expected Salary: ${data.expectedSalary}
             attachments.push({
                 filename: resume.name,
                 content: arrayBufferToBase64(resumeBuffer),
-                type: resume.type || 'application/octet-stream'
+                type: resume.type || 'application/pdf',
+                disposition: 'attachment'
             });
         }
 
@@ -85,7 +86,8 @@ Expected Salary: ${data.expectedSalary}
             attachments.push({
                 filename: coverLetter.name,
                 content: arrayBufferToBase64(coverLetterBuffer),
-                type: coverLetter.type || 'application/octet-stream'
+                type: coverLetter.type || 'application/pdf',
+                disposition: 'attachment'
             });
         }
 
@@ -102,9 +104,13 @@ Expected Salary: ${data.expectedSalary}
             content: [{
                 type: 'text/plain',
                 value: emailBody
-            }],
-            attachments: attachments
+            }]
         };
+
+        // Only add attachments if they exist
+        if (attachments.length > 0) {
+            emailData.attachments = attachments;
+        }
 
         const emailResponse = await fetch('https://api.mailchannels.net/tx/v1/send', {
             method: 'POST',
