@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development tsx server/index.ts",
     "build": "tsx script/build.ts",
+    "build:worker": "cp worker/index.js dist/worker.js",
+    "deploy:cloudflare": "pnpm build && npx wrangler pages deploy dist/public && npx wrangler deploy",
     "deploy:firebase": "pnpm build && firebase deploy --only hosting",
     "start": "node dist/index.cjs",
     "check": "tsc",

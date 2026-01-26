@@ -1,0 +1,15 @@
+name = "eazytaxes-api"
+main = "worker/index.js"
+compatibility_date = "2026-01-26"
+
+# Environment variables (set in Cloudflare dashboard)
+# EMAIL_USER = "contact@eazytaxes.com"
+# EMAIL_APP_PASSWORD = "your_gmail_app_password"
+
+[build]
+command = "npm run build:worker"
+
+# Routes - this worker will handle /api/* requests
+routes = [
+  { pattern = "*/api/*", zone_name = "your-domain.com" }
+]

@@ -1,186 +1,244 @@
-# Cloudflare Pages + Railway Deployment Guide
+# Cloudflare Full Deployment Guide (Pages + Workers)
 
-This guide explains how to deploy your application with:
-- **Frontend**: Cloudflare Pages (static files, global CDN)
-- **Backend**: Railway (Node.js + PostgreSQL)
+Deploy your entire application to Cloudflare:
+- **Frontend**: Cloudflare Pages (static files)
+- **API**: Cloudflare Workers (serverless email function)
 
-## Important Note
+No separate backend server needed!
 
-**Cloudflare Pages only hosts static files**. Your backend (Express.js API, database, email functionality) must be deployed separately to Railway.
+## Prerequisites
 
-## Part 1: Deploy Backend to Railway
+1. **Cloudflare Account**: Sign up at https://dash.cloudflare.com/
+2. **Wrangler CLI**: `npm install -g wrangler`
 
-### Step 1: Deploy to Railway
+## Part 1: Deploy API Worker
 
-1. Go to https://railway.app/ and login
-2. Click "New Project" → "Deploy from GitHub repo"
+### Step 1: Login to Cloudflare
+
+```bash
+npx wrangler login
+```
+
+### Step 2: Configure Email Service
+
+The worker uses **MailChannels** (free for Cloudflare Workers) to send emails.
+
+Alternatively, you can use:
+- **Resend** (https://resend.com/) - 3,000 emails/month free
+- **SendGrid** - 100 emails/day free
+- **Gmail SMTP** (requires modifications)
+
+### Step 3: Set Environment Variables
+
+```bash
+npx wrangler secret put EMAIL_USER
+# Enter: contact@eazytaxes.com
+
+npx wrangler secret put EMAIL_APP_PASSWORD
+# Enter: your_password_if_needed
+```
+
+### Step 4: Deploy Worker
+
+```bash
+npx wrangler deploy
+```
+
+Your API will be available at: `https://eazytaxes-api.your-subdomain.workers.dev`
+
+## Part 2: Deploy Frontend to Pages
+
+### Step 1: Update Frontend Configuration
+
+The frontend is already configured to work without `VITE_API_URL` (uses relative paths).
+
+For Cloudflare Pages with Workers, no environment variable is needed if you configure routes correctly.
+
+### Step 2: Deploy to Cloudflare Pages
+
+#### Option A: Via Dashboard (Recommended)
+
+1. Go to https://dash.cloudflare.com/ → **Workers & Pages**
+2. Click **Create application** → **Pages** → **Connect to Git**
 3. Select your repository
-4. Railway will auto-detect and deploy
-
-### Step 2: Configure Environment Variables
-
-In Railway dashboard, add these variables:
-
-```env
-NODE_ENV=production
-EMAIL_USER=contact@eazytaxes.com
-EMAIL_APP_PASSWORD=your_gmail_app_password
-DATABASE_URL=postgresql://...  # Auto-added if you add PostgreSQL
-FRONTEND_URL=https://your-site.pages.dev
-```
-
-### Step 3: Add PostgreSQL Database
-
-1. In Railway project, click "New" → "Database" → "PostgreSQL"
-2. `DATABASE_URL` will be automatically added to your service
-
-### Step 4: Get Railway URL
-
-After deployment, copy your Railway URL:
-```
-https://your-app-name.up.railway.app
-```
-
-## Part 2: Deploy Frontend to Cloudflare Pages
-
-### Step 1: Update Environment Configuration
-
-Create `client/.env.production` with your Railway URL:
-
-```env
-VITE_API_URL=https://your-app-name.up.railway.app
-```
-
-**Replace** `your-app-name.up.railway.app` with your actual Railway URL from Step 1.
-
-### Step 2: Configure Cloudflare Pages
-
-1. Go to https://dash.cloudflare.com/
-2. Navigate to **Workers & Pages** → **Create application** → **Pages**
-3. Connect to your GitHub repository
 4. Configure build settings:
    - **Build command**: `pnpm build`
    - **Build output directory**: `dist/public`
    - **Root directory**: (leave empty)
+5. Click **Save and Deploy**
 
-### Step 3: Add Environment Variables in Cloudflare
+#### Option B: Via CLI
 
-In Cloudflare Pages project settings → **Environment variables**:
-
-```
-VITE_API_URL = https://your-app-name.up.railway.app
-```
-
-### Step 4: Deploy
-
-Click "Save and Deploy". Cloudflare will:
-1. Install dependencies with `pnpm`
-2. Run `pnpm build`
-3. Deploy `dist/public` to their global CDN
-
-### Step 5: Update Railway CORS
-
-Go back to Railway and add your Cloudflare Pages URL to environment variables:
-
-```env
-FRONTEND_URL=https://your-site.pages.dev
+```bash
+pnpm build
+npx wrangler pages deploy dist/public --project-name=eazytaxes
 ```
 
-Then **redeploy** the Railway service to apply CORS changes.
+### Step 3: Connect Worker to Pages
 
-## Cloudflare Pages Settings
+In Cloudflare dashboard:
 
-### Build Configuration
+1. Go to your **Pages project** → **Settings** → **Functions**
+2. Add a **Worker route**:
+   - Pattern: `/api/*`
+   - Worker: `eazytaxes-api`
 
-If Cloudflare doesn't auto-detect, manually set:
+This routes all `/api/*` requests to your Worker.
 
-| Setting | Value |
-|---------|-------|
-| Framework preset | None |
-| Build command | `pnpm build` |
-| Build output directory | `dist/public` |
-| Root directory | (empty) |
-| Environment variables | `VITE_API_URL=https://your-railway-url.up.railway.app` |
+## Alternative: Deploy Both Together
 
-### Redirects (SPA Routing)
+Update `wrangler.toml` to include Pages:
 
-Cloudflare Pages should auto-detect the `_redirects` file in `client/public/`:
+```toml
+name = "eazytaxes-api"
+main = "worker/index.js"
+compatibility_date = "2026-01-26"
 
+# Pages configuration
+[site]
+bucket = "./dist/public"
+
+# Worker routes for API
+[[routes]]
+pattern = "*/api/*"
 ```
-/*  /index.html  200
-```
 
-This ensures client-side routing works correctly.
+Then deploy with:
+```bash
+pnpm run deploy:cloudflare
+```
 
 ## Verification
 
-1. **Frontend**: Visit your Cloudflare Pages URL (e.g., `https://your-site.pages.dev`)
-2. **Backend**: Test API at `https://your-railway-url.up.railway.app/api/health`
-3. **Integration**: Try submitting a job application form
+1. **Frontend**: Visit `https://eazytaxes.pages.dev` (or your custom domain)
+2. **API Health Check**: `https://eazytaxes.pages.dev/api/health`
+3. **Test Form**: Submit a job application
+
+## Email Service Options
+
+### Option 1: MailChannels (Recommended - Free)
+
+Already configured in `worker/index.js`. No additional setup needed.
+
+**Pros**:
+- Free for Cloudflare Workers
+- No API key required
+- Reliable delivery
+
+**Cons**:
+- Requires SPF/DKIM DNS records for production
+
+### Option 2: Resend (Alternative)
+
+1. Sign up at https://resend.com/
+2. Get API key
+3. Update `worker/index.js`:
+
+```javascript
+async function sendEmail(env, { to, from, subject, text }) {
+  const response = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${env.RESEND_API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from: from,
+      to: [to],
+      subject: subject,
+      text: text
+    })
+  });
+  
+  return response;
+}
+```
+
+4. Set secret:
+```bash
+npx wrangler secret put RESEND_API_KEY
+```
+
+### Option 3: SendGrid
+
+Similar to Resend, use SendGrid API:
+
+```bash
+npx wrangler secret put SENDGRID_API_KEY
+```
+
+## Custom Domain
+
+### For Pages
+
+1. Go to Pages project → **Custom domains**
+2. Click **Set up a custom domain**
+3. Add your domain (e.g., `eazytaxes.com`)
+4. Follow DNS configuration steps
+
+### For Worker (if using separate subdomain)
+
+1. Go to Worker → **Settings** → **Triggers**
+2. Add custom domain (e.g., `api.eazytaxes.com`)
 
 ## Local Development
 
-For local development:
+For local development with the Worker:
+
+```bash
+npx wrangler dev
+```
+
+This starts:
+- Worker at `http://localhost:8787`
+- You can test API endpoints locally
+
+For the full app:
 ```bash
 pnpm dev
 ```
 
-The app works without environment variables:
-- Frontend: `http://localhost:5173`
-- Backend: `http://localhost:5000`
-- API calls use relative paths when `VITE_API_URL` is not set
-
 ## Troubleshooting
 
-### Build Fails on Cloudflare
+### Worker Not Receiving Requests
 
-**Error**: "Missing entry-point to Worker script"
-- **Solution**: Cloudflare is trying to use Wrangler (Workers). Make sure build output directory is set to `dist/public` in Cloudflare Pages settings.
+1. Check Worker route is configured: `/api/*`
+2. Verify Worker is deployed: `npx wrangler deployments list`
+3. Check Worker logs: `npx wrangler tail`
+
+### Email Not Sending
+
+1. Check Worker logs for errors
+2. Verify email service credentials
+3. For MailChannels, check SPF/DKIM records
 
 ### CORS Errors
 
-If you see CORS errors:
-1. Verify `FRONTEND_URL` is set in Railway with your Cloudflare Pages URL
-2. Redeploy Railway service
-3. Check that the URL matches exactly (with/without `www`, `https://`)
+The Worker already includes CORS headers. If issues persist:
+1. Check browser console for specific error
+2. Verify Worker is handling OPTIONS requests
+3. Update `Access-Control-Allow-Origin` in worker code if needed
 
-### API Calls Fail (404)
-
-1. Check `VITE_API_URL` in Cloudflare Pages environment variables
-2. Verify Railway backend is running
-3. Test Railway API directly: `https://your-railway-url.up.railway.app/api/health`
-
-### Build Output Not Found
-
-If Cloudflare says "No output found":
-1. Verify build command is `pnpm build`
-2. Check build output directory is `dist/public`
-3. Look at build logs to ensure build succeeded
-
-## Custom Domain
-
-### Cloudflare Pages
-1. Go to your Pages project → **Custom domains**
-2. Click "Set up a custom domain"
-3. Follow DNS configuration steps
-
-### Railway
-1. Go to Settings → Networking
-2. Add custom domain for API
-3. Update `VITE_API_URL` in Cloudflare to use custom domain
-
-## Cost Estimate
+## Cost
 
 - **Cloudflare Pages**: Free (unlimited requests, 500 builds/month)
-- **Railway**: $0-5/month
-  - Free tier: 500 hours/month
-  - Includes PostgreSQL
-- **Total**: $0-5/month
+- **Cloudflare Workers**: Free tier (100,000 requests/day)
+- **MailChannels**: Free for Cloudflare Workers
+- **Total**: $0/month 🎉
 
-## Why This Approach?
+## Benefits of This Approach
 
-- **Performance**: Cloudflare's global CDN for frontend
-- **Reliability**: Cloudflare's 99.99% uptime
-- **Cost**: Both have generous free tiers
-- **Scalability**: Each service scales independently
-- **Simple**: Standard deployment process
+✅ **Fully Serverless**: No servers to manage
+✅ **Global CDN**: Fast worldwide
+✅ **Zero Cost**: Everything on free tier
+✅ **Auto-Scaling**: Handles traffic spikes automatically
+✅ **Simple**: Single platform for everything
+✅ **Reliable**: Cloudflare's 99.99% uptime
+
+## Next Steps
+
+1. Deploy Worker: `npx wrangler deploy`
+2. Deploy Pages via Cloudflare dashboard
+3. Configure Worker route in Pages settings
+4. Test job application form
+5. (Optional) Add custom domain
