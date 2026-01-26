@@ -1,0 +1,18 @@
+# Cloudflare Pages build configuration
+# This file tells Cloudflare Pages how to build and deploy your static frontend
+
+# Build command
+build_command = "pnpm build"
+
+# Output directory (where the built static files are)
+build_output_directory = "dist/public"
+
+# Node.js version
+[build.environment]
+NODE_VERSION = "22"
+
+# Redirects for client-side routing (SPA)
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
