@@ -34,14 +34,12 @@ app.post('/api/contact', async (req, res) => {
     console.log('Creating transporter...');
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
-      port: 587,
-      secure: false,
+      port: 465,
+      secure: true,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_APP_PASSWORD,
       },
-      connectionTimeout: 10000,
-      greetingTimeout: 10000,
     });
 
     console.log('Sending email...');
@@ -99,8 +97,8 @@ app.post('/api/job-application', upload.fields([
 
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
-      port: 587,
-      secure: false,
+      port: 465,
+      secure: true,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_APP_PASSWORD,
