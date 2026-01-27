@@ -34,7 +34,8 @@ app.post('/api/contact', async (req, res) => {
     }
 
     console.log('Sending email via Resend...');
-    await resend.emails.send({
+    console.log('To:', process.env.EMAIL_USER);
+    const result = await resend.emails.send({
       from: 'onboarding@resend.dev',
       to: process.env.EMAIL_USER,
       reply_to: email,
@@ -49,6 +50,7 @@ app.post('/api/contact', async (req, res) => {
         <p>${message}</p>
       `,
     });
+    console.log('Resend result:', result);
 
     console.log('Email sent successfully');
     res.json({ success: true, message: "Message sent successfully" });
@@ -63,10 +65,13 @@ app.post('/api/job-application', upload.fields([
   { name: 'resume', maxCount: 1 },
   { name: 'coverLetter', maxCount: 1 }
 ]), async (req, res) => {
+  console.log('Job application received');
   try {
     const { jobTitle, fullName, email, phone, linkedin, portfolio, 
             currentLocation, noticePeriod, expectedSalary, additionalInfo } = req.body;
     const files = req.files;
+
+    console.log('Files:', files);
 
     if (!fullName || !email || !phone) {
       return res.status(400).json({ message: 'Missing required fields' });
@@ -91,16 +96,12 @@ app.post('/api/job-application', upload.fields([
       attachments.push({
         filename: files.resume[0].originalname,
         content: files.resume[0].buffer.toString('base64'),
-        type: files.resume[0].mimetype,
-        disposition: 'attachment'
       });
     }
     if (files.coverLetter && files.coverLetter[0]) {
       attachments.push({
         filename: files.coverLetter[0].originalname,
         content: files.coverLetter[0].buffer.toString('base64'),
-        type: files.coverLetter[0].mimetype,
-        disposition: 'attachment'
       });
     }
 
@@ -112,7 +113,8 @@ app.post('/api/job-application', upload.fields([
       });
     }
 
-    await resend.emails.send({
+    console.log('Sending job application email...');
+    const result = await resend.emails.send({
       from: 'onboarding@resend.dev',
       to: process.env.EMAIL_USER,
       subject: `Job Application: ${jobTitle} - ${fullName}`,
@@ -131,10 +133,11 @@ app.post('/api/job-application', upload.fields([
       `,
       attachments
     });
+    console.log('Resend result:', result);
 
     res.json({ success: true, message: "Application submitted successfully" });
   } catch (error) {
-    console.error("Error:", error);
+    console.error("Job application error:", error);
     res.status(500).json({ success: false, message: error.message });
   }
 });
