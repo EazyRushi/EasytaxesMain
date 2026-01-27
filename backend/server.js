@@ -23,6 +23,7 @@ app.options('*', cors());
 
 // Contact form endpoint
 app.post('/api/contact', async (req, res) => {
+  console.log('Contact form received:', req.body);
   try {
     const { name, email, subject, message, serviceInterest } = req.body;
 
@@ -30,6 +31,7 @@ app.post('/api/contact', async (req, res) => {
       return res.status(400).json({ message: 'Missing required fields' });
     }
 
+    console.log('Creating transporter...');
     const transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 587,
@@ -38,8 +40,11 @@ app.post('/api/contact', async (req, res) => {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_APP_PASSWORD,
       },
+      connectionTimeout: 10000,
+      greetingTimeout: 10000,
     });
 
+    console.log('Sending email...');
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
@@ -56,9 +61,10 @@ app.post('/api/contact', async (req, res) => {
       `,
     });
 
+    console.log('Email sent successfully');
     res.json({ success: true, message: "Message sent successfully" });
   } catch (error) {
-    console.error("Error:", error);
+    console.error("Contact form error:", error);
     res.status(500).json({ success: false, message: error.message });
   }
 });
