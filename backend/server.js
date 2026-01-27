@@ -1,8 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 require('dotenv').config();
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -31,22 +33,11 @@ app.post('/api/contact', async (req, res) => {
       return res.status(400).json({ message: 'Missing required fields' });
     }
 
-    console.log('Creating transporter...');
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_APP_PASSWORD,
-      },
-    });
-
-    console.log('Sending email...');
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
+    console.log('Sending email via Resend...');
+    await resend.emails.send({
+      from: 'onboarding@resend.dev',
       to: process.env.EMAIL_USER,
-      replyTo: email,
+      reply_to: email,
       subject: `Contact Form: ${subject || 'New Message'} - ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -95,27 +86,21 @@ app.post('/api/job-application', upload.fields([
       }
     });
 
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_APP_PASSWORD,
-      },
-    });
-
     const attachments = [];
     if (files.resume && files.resume[0]) {
       attachments.push({
         filename: files.resume[0].originalname,
-        content: files.resume[0].buffer
+        content: files.resume[0].buffer.toString('base64'),
+        type: files.resume[0].mimetype,
+        disposition: 'attachment'
       });
     }
     if (files.coverLetter && files.coverLetter[0]) {
       attachments.push({
         filename: files.coverLetter[0].originalname,
-        content: files.coverLetter[0].buffer
+        content: files.coverLetter[0].buffer.toString('base64'),
+        type: files.coverLetter[0].mimetype,
+        disposition: 'attachment'
       });
     }
 
@@ -127,8 +112,8 @@ app.post('/api/job-application', upload.fields([
       });
     }
 
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
+    await resend.emails.send({
+      from: 'onboarding@resend.dev',
       to: process.env.EMAIL_USER,
       subject: `Job Application: ${jobTitle} - ${fullName}`,
       html: `
