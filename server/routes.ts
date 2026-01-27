@@ -17,6 +17,54 @@ const upload = multer({
 });
 
 export function registerRoutes(httpServer: Server, app: Express): Server {
+  // Contact form endpoint
+  app.post("/api/contact", async (req, res) => {
+    try {
+      const { name, email, subject, message, serviceInterest } = req.body;
+
+      if (!name || !email || !message) {
+        return res.status(400).json({ message: 'Missing required fields' });
+      }
+
+      const transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 587,
+        secure: false,
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_APP_PASSWORD,
+        },
+      });
+
+      await transporter.sendMail({
+        from: process.env.EMAIL_USER,
+        to: process.env.EMAIL_USER,
+        replyTo: email,
+        subject: `Contact Form: ${subject || 'New Message'} - ${name}`,
+        html: `
+          <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+            <h2 style="color: #3FB9CB;">New Contact Form Submission</h2>
+            <table style="width: 100%; border-collapse: collapse;">
+              <tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Name:</strong></td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${name}</td></tr>
+              <tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Email:</strong></td><td style="padding: 8px; border-bottom: 1px solid #ddd;"><a href="mailto:${email}">${email}</a></td></tr>
+              ${serviceInterest ? `<tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Service Interest:</strong></td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${serviceInterest}</td></tr>` : ''}
+              ${subject ? `<tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Subject:</strong></td><td style="padding: 8px; border-bottom: 1px solid #ddd;">${subject}</td></tr>` : ''}
+            </table>
+            <h3 style="color: #333; margin-top: 20px;">Message:</h3>
+            <div style="padding: 15px; background-color: #f8f9fa; border-radius: 5px;">
+              <p style="margin: 0; white-space: pre-wrap;">${message}</p>
+            </div>
+          </div>
+        `,
+      });
+
+      res.json({ success: true, message: "Message sent successfully" });
+    } catch (error) {
+      console.error("Error processing contact form:", error);
+      res.status(500).json({ success: false, message: error instanceof Error ? error.message : "Failed to send message" });
+    }
+  });
+
   // Job application endpoint
   app.post("/api/job-application", upload.fields([
     { name: 'resume', maxCount: 1 },

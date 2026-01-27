@@ -222,12 +222,11 @@ export default function JobApplication() {
                       id="phone"
                       type="tel"
                       required
-                      pattern="[+]?[0-9]{1,4}[\s.\-]?[(]?[0-9]{1,4}[)]?[\s.\-]?[0-9]{1,4}[\s.\-]?[0-9]{1,9}"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="+91 98765 43210"
                       className="mt-1"
-                      title="Please enter a valid phone number (e.g., +91 98765 43210 or +1 555-123-4567)"
+                      title="Please enter a valid phone number"
                     />
                   </div>
                   <div>
