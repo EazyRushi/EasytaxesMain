@@ -18,6 +18,9 @@ const upload = multer({
   limits: { fileSize: 5 * 1024 * 1024 }
 });
 
+// Handle preflight requests
+app.options('*', cors());
+
 // Contact form endpoint
 app.post('/api/contact', async (req, res) => {
   try {
