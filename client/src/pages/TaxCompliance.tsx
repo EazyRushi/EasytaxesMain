@@ -275,11 +275,11 @@ export default function TaxCompliance() {
                 </div>
               </div>
 
-              <Link href={`/contact?service=Tax%20%26%20Compliance&plan=${opt.title}#form`} className="w-full">
+              <a href="https://app.cpa.octondata.com/org/4S064E/register" target="_blank" rel="noopener noreferrer" className="w-full">
                 <Button className="w-full h-14 rounded-xl font-bold text-base transition-all duration-300 bg-slate-900 hover:bg-slate-800 text-white border-0">
                   Get Started
                 </Button>
-              </Link>
+              </a>
 
               <div className="h-px w-full my-8 bg-slate-100"></div>
 
