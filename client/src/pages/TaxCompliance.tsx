@@ -114,7 +114,7 @@ export default function TaxCompliance() {
             transition={{ delay: 0.2 }}
             className="text-xl md:text-2xl max-w-2xl mb-10 font-light"
           >
-            Buy, onboard, and ppimofe with effortless US tax filings and proactive compliance management.
+            Buy, onboard, and operate with effortless US tax filings and proactive compliance management.
           </motion.p>
 
           <motion.div

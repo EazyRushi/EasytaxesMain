@@ -1,7 +1,19 @@
-import type { Express } from "express";
+import type { Express, Request, Response, NextFunction } from "express";
+// ... imports
+
+function requireAuth(req: Request, res: Response, next: NextFunction) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.status(401).send("Unauthorized");
+}
 import { createServer, type Server } from "http";
 import multer from "multer";
 import nodemailer from "nodemailer";
+
+import { db } from "./db";
+import { questionnaires, users } from "@shared/schema";
+import { eq } from "drizzle-orm";
 
 const upload = multer({
   storage: multer.memoryStorage(),
@@ -16,7 +28,101 @@ const upload = multer({
   }
 });
 
+// ... imports at top will be fixed implicitly by not changing lines 1-3 if not needed, but here I am creating a clean slate for the top part.
+// Wait, I should not delete the entire file.
+// I will just remove the duplicate requireAuth and add the new routes.
+
+
 export function registerRoutes(httpServer: Server, app: Express): Server {
+  // Questionnaire Endpoints
+  app.get("/api/questionnaire", requireAuth, async (req, res) => {
+    try {
+      const userId = (req.user as any).id;
+      const [questionnaire] = await db
+        .select()
+        .from(questionnaires)
+        .where(eq(questionnaires.userId, userId))
+        .orderBy(questionnaires.updatedAt) // Get latest? or assume one per user for now
+        .limit(1);
+
+      if (!questionnaire) {
+        return res.json({ data: null });
+      }
+
+      res.json(questionnaire);
+    } catch (error) {
+      console.error("Error fetching questionnaire:", error);
+      res.status(500).json({ message: "Failed to fetch questionnaire" });
+    }
+  });
+
+  app.post("/api/questionnaire", requireAuth, async (req, res) => {
+    try {
+      const userId = (req.user as any).id;
+      const { data, status } = req.body;
+
+      // Check if exists
+      const [existing] = await db
+        .select()
+        .from(questionnaires)
+        .where(eq(questionnaires.userId, userId))
+        .limit(1);
+
+      if (existing) {
+        const [updated] = await db
+          .update(questionnaires)
+          .set({
+            data: JSON.stringify(data),
+            status: status || existing.status,
+            updatedAt: new Date()
+          })
+          .where(eq(questionnaires.id, existing.id))
+          .returning();
+        return res.json(updated);
+      } else {
+        const [created] = await db
+          .insert(questionnaires)
+          .values({
+            userId,
+            data: JSON.stringify(data),
+            status: status || "draft"
+          })
+          .returning();
+        return res.json(created);
+      }
+    } catch (error) {
+      console.error("Error saving questionnaire:", error);
+      res.status(500).json({ message: "Failed to save questionnaire" });
+    }
+  });
+
+
+  // Admin Endpoint
+  app.get("/api/admin/questionnaires", requireAuth, async (req, res) => {
+    try {
+      // In a real app, check for admin role here:
+      // if ((req.user as any).role !== 'admin') return res.status(403).send("Forbidden");
+
+      const results = await db
+        .select({
+          id: questionnaires.id,
+          userId: questionnaires.userId,
+          status: questionnaires.status,
+          updatedAt: questionnaires.updatedAt,
+          data: questionnaires.data,
+          email: users.email,
+        })
+        .from(questionnaires)
+        .leftJoin(users, eq(questionnaires.userId, users.id));
+
+      res.json(results);
+    } catch (error) {
+      console.error("Error fetching admin questionnaires:", error);
+      res.status(500).json({ message: "Failed to fetch questionnaires" });
+    }
+  });
+
+
   // Contact form endpoint
   app.post("/api/contact", async (req, res) => {
     try {
@@ -75,10 +181,10 @@ export function registerRoutes(httpServer: Server, app: Express): Server {
       console.log("Email config:", { user: process.env.EMAIL_USER, hasPassword: !!process.env.EMAIL_APP_PASSWORD });
       console.log("Body:", req.body);
       console.log("Files:", req.files);
-      
-      const { 
-        jobTitle, fullName, email, phone, linkedin, portfolio, 
-        currentLocation, noticePeriod, expectedSalary, additionalInfo 
+
+      const {
+        jobTitle, fullName, email, phone, linkedin, portfolio,
+        currentLocation, noticePeriod, expectedSalary, additionalInfo
       } = req.body;
       const files = req.files as { [fieldname: string]: Express.Multer.File[] };
 

@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollToTop from "@/components/ScrollToTop";
 import { WhatsAppFloat } from "@/components/ui/whatsapp-float";
+import { AuthProvider } from "@/hooks/use-auth";
 import NotFound from "@/pages/not-found";
 
 // Page Imports
@@ -20,6 +21,13 @@ import CfoAdvisory from "@/pages/CfoAdvisory";
 import Valuations from "@/pages/Valuations";
 import UsFormation from "@/pages/UsFormation";
 import Questionnaire from "@/pages/Questionnaire";
+import EazytaxesAdmin from "@/pages/EazytaxesAdmin";
+
+import Auth from "@/pages/Auth";
+import Dashboard from "@/pages/Dashboard";
+import FormationHome from "@/pages/formation/FormationHome";
+import GetStarted from "@/pages/formation/GetStarted";
+import Recommendation from "@/pages/formation/Recommendation";
 
 import Careers from "@/pages/Careers";
 import JobApplication from "@/pages/JobApplication";
@@ -28,6 +36,8 @@ import PrivacyPolicy from "@/pages/PrivacyPolicy";
 import TermsOfService from "@/pages/TermsOfService";
 import CookieNotice from "@/pages/CookieNotice";
 import { CookieConsent } from "@/components/ui/cookie-consent";
+import ProfileOnboarding from "@/pages/ProfileOnboarding";
+
 
 function Router() {
   return (
@@ -44,6 +54,14 @@ function Router() {
       <Route path="/valuations" component={Valuations} />
       <Route path="/us-formation" component={UsFormation} />
       <Route path="/questionnaire" component={Questionnaire} />
+      <Route path="/EazytaxesAdmin" component={EazytaxesAdmin} />
+      <Route path="/dashboard" component={Dashboard} />
+      <Route path="/profile-onboarding" component={ProfileOnboarding} />
+
+      <Route path="/auth" component={Auth} />
+      <Route path="/formation" component={FormationHome} />
+      <Route path="/formation/get-started" component={GetStarted} />
+      <Route path="/formation/recommendation" component={Recommendation} />
 
       <Route path="/careers" component={Careers} />
       <Route path="/careers/:jobTitle/apply" component={JobApplication} />
@@ -61,13 +79,15 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <ScrollToTop />
-        <WhatsAppFloat />
-        <Router />
-        <CookieConsent />
-      </TooltipProvider>
+      <AuthProvider>
+        <TooltipProvider>
+          <Toaster />
+          <ScrollToTop />
+          <WhatsAppFloat />
+          <Router />
+          <CookieConsent />
+        </TooltipProvider>
+      </AuthProvider>
     </QueryClientProvider>
   );
 }

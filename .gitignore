@@ -54,3 +54,6 @@ temp/
 
 # Broken Submodules
 Eazytaxem.com-new_Design/
+
+# Ignored Pages
+client/src/pages/formation/
