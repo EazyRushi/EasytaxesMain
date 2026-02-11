@@ -25,9 +25,9 @@ import EazytaxesAdmin from "@/pages/EazytaxesAdmin";
 
 import Auth from "@/pages/Auth";
 import Dashboard from "@/pages/Dashboard";
-import FormationHome from "@/pages/formation/FormationHome";
-import GetStarted from "@/pages/formation/GetStarted";
-import Recommendation from "@/pages/formation/Recommendation";
+import FormationHome from "@/pages/formation/FormationHome.tsx";
+import GetStarted from "@/pages/formation/GetStarted.tsx";
+import Recommendation from "@/pages/formation/Recommendation.tsx";
 
 import Careers from "@/pages/Careers";
 import JobApplication from "@/pages/JobApplication";
