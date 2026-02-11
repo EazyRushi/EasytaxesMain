@@ -154,7 +154,12 @@ export default function TaxCompliance() {
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto px-2 sm:px-0">
           {situations.map((sit, i) => (
-            <Link key={i} href={sit.link || `/contact?service=Tax%20%26%20Compliance&plan=${encodeURIComponent(sit.title)}#form`}>
+            <a
+              key={i}
+              href={sit.link || "https://app.cpa.octondata.com/org/4S064E/register"}
+              target={sit.link ? "_self" : "_blank"}
+              rel={sit.link ? "" : "noopener noreferrer"}
+            >
               <div className="p-4 sm:p-6 bg-slate-50 rounded-xl hover:bg-slate-100 transition-all group cursor-pointer h-full flex flex-col items-center justify-center text-center">
                 <h3 className="text-sm sm:text-base md:text-xl font-bold text-slate-900 mb-1 sm:mb-2 group-hover:text-[#3FB9CB] transition-colors leading-snug">
                   {sit.title}
@@ -166,7 +171,7 @@ export default function TaxCompliance() {
                   Start Now
                 </div>
               </div>
-            </Link>
+            </a>
           ))}
         </div>
       </section>
