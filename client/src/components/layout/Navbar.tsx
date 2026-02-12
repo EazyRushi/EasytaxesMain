@@ -18,7 +18,7 @@ export function Navbar() {
   ];
 
   const serviceLinks = [
-    { label: "Tax & Compliance", href: "/tax-compliance" },
+    { label: "Tax & Compliance", href: "/ustax" },
     { label: "Tax Resolution", href: "/tax-resolution" },
     { label: "Assurance & SOC 2", href: "/assurance-soc2" },
     { label: "CFO & Advisory", href: "/cfo-advisory" },

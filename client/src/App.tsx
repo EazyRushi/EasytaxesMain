@@ -44,7 +44,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
 
-      <Route path="/tax-compliance" component={TaxCompliance} />
+      <Route path="/ustax" component={TaxCompliance} />
       <Route path="/contact" component={Contact} />
       <Route path="/checkout" component={Checkout} />
       <Route path="/onboarding" component={Onboarding} />

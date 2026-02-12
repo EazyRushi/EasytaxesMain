@@ -32,11 +32,11 @@ export function TaxComplianceNavbar() {
                 }
             `}</style>
 
-            <div className="nav-section-inner px-8 py-4 flex items-center justify-between">
+            <div className="nav-section-inner px-4 md:px-8 py-3 md:py-4 flex items-center justify-between">
                 {/* Logo */}
                 <a
                     href="/"
-                    className="text-2xl font-medium"
+                    className="text-xl md:text-2xl font-medium"
                     style={{
                         fontFamily: "'DM Serif Display', Georgia, serif",
                         letterSpacing: '-0.02em',
@@ -84,10 +84,10 @@ export function TaxComplianceNavbar() {
                 {/* Mobile CTA */}
                 <a
                     href="https://app.cpa.octondata.com/org/4S064E/register"
-                    className="md:hidden inline-flex items-center gap-2 px-5 py-2 rounded-lg text-sm font-semibold text-white"
+                    className="md:hidden inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-md text-xs font-semibold text-white"
                     style={{ background: '#0D9488' }}
                 >
-                    Get Started Free →
+                    Get Started
                 </a>
             </div>
         </motion.nav>

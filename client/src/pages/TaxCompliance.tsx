@@ -49,7 +49,7 @@ export default function TaxCompliance() {
               className="mb-5"
               style={{
                 fontFamily: "'DM Serif Display', Georgia, serif",
-                fontSize: 'clamp(34px, 4.2vw, 52px)',
+                fontSize: 'clamp(32px, 5vw, 52px)',
                 lineHeight: '1.12',
                 fontWeight: '700',
                 letterSpacing: '-0.025em',
@@ -63,7 +63,7 @@ export default function TaxCompliance() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-lg mb-8 max-w-xl leading-relaxed"
+              className="text-base md:text-lg mb-8 max-w-xl leading-relaxed"
               style={{ color: '#64748B' }}
             >
               Answer a few questions, upload your documents, and a dedicated CPA or Enrolled Agent handles the rest — from review to filing. Track every step in your personal dashboard.
@@ -73,21 +73,21 @@ export default function TaxCompliance() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="flex flex-wrap gap-4 mb-8"
+              className="flex flex-col sm:flex-row flex-wrap gap-4 mb-8 w-full sm:w-auto"
             >
               <a
                 href="https://app.cpa.octondata.com/org/4S064E/register"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg font-semibold text-white transition-all hover:-translate-y-0.5 shadow-md hover:shadow-xl"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg font-semibold text-white transition-all hover:-translate-y-0.5 shadow-md hover:shadow-xl w-full sm:w-auto text-center"
                 style={{ background: '#0D9488', border: '2px solid #0D9488' }}
               >
-                Start Your Free Profile <ArrowRight className="w-4 h-4" />
+                Start Your Free Profile <ArrowRight className="w-4 h-4 flex-shrink-0" />
               </a>
               <a
                 href="#process"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg font-semibold bg-white border-2 transition-all hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-lg font-semibold bg-white border-2 transition-all hover:-translate-y-0.5 w-full sm:w-auto text-center"
                 style={{ color: '#374151', borderColor: '#E2E8F0' }}
               >
-                See How It Works <ChevronDown className="w-4 h-4" />
+                See How It Works <ChevronDown className="w-4 h-4 flex-shrink-0" />
               </a>
             </motion.div>
 
@@ -95,7 +95,7 @@ export default function TaxCompliance() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="flex flex-wrap gap-6 text-sm font-medium"
+              className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-6 text-sm font-medium w-full sm:w-auto"
               style={{ color: '#94A3B8' }}
             >
               <div className="flex items-center gap-2">
@@ -181,7 +181,7 @@ export default function TaxCompliance() {
               initial={{ opacity: 0, y: 10, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ delay: 0.9 }}
-              className="absolute -bottom-4 -left-6 bg-white border rounded-xl px-3.5 py-2.5 shadow-lg flex items-center gap-2.5 text-xs"
+              className="absolute -bottom-10 -left-12 bg-white border rounded-xl px-3.5 py-2.5 shadow-lg flex items-center gap-2.5 text-xs"
               style={{ borderColor: '#E2E8F0' }}
             >
               <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold" style={{ background: 'linear-gradient(135deg, #0D9488, #0A7A70)' }}>MR</div>
@@ -195,7 +195,7 @@ export default function TaxCompliance() {
               initial={{ opacity: 0, y: 10, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ delay: 0.9 }}
-              className="absolute top-8 -right-5 bg-white border rounded-xl px-3 py-2 shadow-lg flex items-center gap-1.5 text-xs font-semibold"
+              className="absolute -top-6 -right-12 bg-white border rounded-xl px-3 py-2 shadow-lg flex items-center gap-1.5 text-xs font-semibold"
               style={{ borderColor: '#E2E8F0', color: '#22C55E' }}
             >
               <Lock className="w-3.5 h-3.5" />
@@ -351,9 +351,9 @@ export default function TaxCompliance() {
             </div>
 
             {/* Dashboard Content */}
-            <div className="grid grid-cols-5" style={{ background: '#FAFAFA' }}>
-              {/* Sidebar */}
-              <div className="col-span-1 py-6 px-4" style={{ background: '#0F172A' }}>
+            <div className="grid grid-cols-1 md:grid-cols-5" style={{ background: '#FAFAFA' }}>
+              {/* Sidebar - Hidden on mobile */}
+              <div className="hidden md:block md:col-span-1 py-6 px-4" style={{ background: '#0F172A' }}>
                 <div className="mb-6 px-2" style={{ fontFamily: "'DM Serif Display', Georgia, serif", fontSize: '15px', color: 'white' }}>
                   eazy<span style={{ color: '#5EEAD4' }}>taxes</span>
                 </div>
@@ -394,7 +394,7 @@ export default function TaxCompliance() {
                 </div>
 
                 {/* Info Cards */}
-                <div className="grid grid-cols-3 gap-4 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                   <div className="p-4 rounded-xl border" style={{ borderColor: '#E2E8F0', background: '#FFF' }}>
                     <div className="text-xs mb-1" style={{ color: '#94A3B8' }}>Status</div>
                     <div className="text-sm font-semibold mb-0.5" style={{ color: '#0D9488' }}>Questionnaire In Progress</div>
@@ -431,40 +431,42 @@ export default function TaxCompliance() {
                     <div className="text-xs" style={{ color: '#94A3B8' }}>Feb 3</div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </div>{/* End Main Content */}
+            </div>{/* End Grid */}
           </motion.div>
 
           {/* Dashboard Features */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
-            {[
-              { icon: FileText, title: 'Guided Questionnaire', desc: 'Plain-English questions that adapt to your answers. Only see what applies to you.' },
-              { icon: Upload, title: 'Inline Document Uploads', desc: 'Upload W-2s and 1099s right where they are asked for. More uploads = less manual entry.' },
-              { icon: AlertTriangle, title: 'Direct Expert Messaging', desc: 'Message your CPA anytime. No phone tag, no waiting on hold. Responses within hours.' }
-            ].map((feat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="flex items-start gap-4"
-              >
-                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: '#F0FDFA', color: '#0D9488' }}>
-                  <feat.icon className="w-5 h-5" />
-                </div>
-                <div>
-                  <h4 className="text-base font-semibold mb-1" style={{ color: '#0F172A' }}>{feat.title}</h4>
-                  <p className="text-sm" style={{ color: '#64748B' }}>{feat.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+            {
+              [
+                { icon: FileText, title: 'Guided Questionnaire', desc: 'Plain-English questions that adapt to your answers. Only see what applies to you.' },
+                { icon: Upload, title: 'Inline Document Uploads', desc: 'Upload W-2s and 1099s right where they are asked for. More uploads = less manual entry.' },
+                { icon: AlertTriangle, title: 'Direct Expert Messaging', desc: 'Message your CPA anytime. No phone tag, no waiting on hold. Responses within hours.' }
+              ].map((feat, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="flex items-start gap-4"
+                >
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: '#F0FDFA', color: '#0D9488' }}>
+                    <feat.icon className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-base font-semibold mb-1" style={{ color: '#0F172A' }}>{feat.title}</h4>
+                    <p className="text-sm" style={{ color: '#64748B' }}>{feat.desc}</p>
+                  </div>
+                </motion.div>
+              ))
+            }
+          </div >
+        </div >
+      </section >
 
       {/* FEATURES DEEP DIVE - Exact copy from HTML */}
-      <section id="features" className="py-24 px-8 bg-white">
+      < section id="features" className="py-24 px-8 bg-white" >
         <div className="max-w-6xl mx-auto space-y-24">
           {/* Feature 1: Guided Questionnaire */}
           <motion.div
@@ -657,10 +659,11 @@ export default function TaxCompliance() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section >
 
       {/* PRICING - Exact copy from HTML */}
-      <section id="pricing" className="py-24 px-8" style={{ background: '#F8FAFC' }}>
+      < section id="pricing" className="py-24 px-8" style={{ background: '#F8FAFC' }
+      }>
         <div className="section-inner">
           <div className="text-center mb-14">
             <div className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: '#0D9488', letterSpacing: '0.12em' }}>Transparent Pricing</div>
@@ -727,10 +730,10 @@ export default function TaxCompliance() {
             </p>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* COMPARISON TABLE - Exact copy from HTML */}
-      <section className="py-24 px-8 bg-white">
+      <section className="hidden md:block py-24 px-8 bg-white">
         <div className="section-inner">
           <div className="text-center mb-14">
             <div className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: '#0D9488', letterSpacing: '0.12em' }}>Why eazytaxes</div>
@@ -738,13 +741,13 @@ export default function TaxCompliance() {
             <p className="text-lg max-w-2xl mx-auto" style={{ color: '#64748B' }}>The convenience of online filing with the expertise of a dedicated tax professional.</p>
           </div>
 
-          <div className="max-w-4xl mx-auto rounded-2xl border overflow-x-auto shadow-lg" style={{ borderColor: '#E2E8F0' }}>
+          <div className="max-w-4xl mx-auto rounded-2xl border shadow-lg overflow-hidden" style={{ borderColor: '#E2E8F0' }}>
             {/* Table Header */}
-            <div className="grid grid-cols-4 border-b" style={{ background: '#F8FAFC', borderColor: '#E2E8F0', minWidth: '600px' }}>
-              <div className="p-4 text-sm font-semibold" style={{ color: '#475569' }}>Feature</div>
-              <div className="p-4 text-center text-sm font-semibold" style={{ color: '#64748B' }}>DIY Software</div>
-              <div className="p-4 text-center text-sm font-semibold text-white relative" style={{ background: '#0D9488' }}>EazyTaxes</div>
-              <div className="p-4 text-center text-sm font-semibold" style={{ color: '#64748B' }}>Traditional CPA</div>
+            <div className="grid grid-cols-4 border-b" style={{ background: '#F8FAFC', borderColor: '#E2E8F0' }}>
+              <div className="p-2 md:p-4 text-xs md:text-sm font-semibold" style={{ color: '#475569' }}>Feature</div>
+              <div className="p-2 md:p-4 text-center text-[10px] md:text-sm font-semibold flex items-center justify-center" style={{ color: '#64748B' }}>DIY Software</div>
+              <div className="p-2 md:p-4 text-center text-[10px] md:text-sm font-semibold text-white relative flex items-center justify-center" style={{ background: '#0D9488' }}>EazyTaxes</div>
+              <div className="p-2 md:p-4 text-center text-[10px] md:text-sm font-semibold flex items-center justify-center" style={{ color: '#64748B' }}>Traditional CPA</div>
             </div>
 
             {/* Table Rows */}
@@ -759,8 +762,8 @@ export default function TaxCompliance() {
               { label: 'Average cost', diy: '$50–$200', us: '$149–$399+', trad: '$300–$800+' },
               { label: 'Average turnaround', diy: 'Immediate', us: '3 days', trad: '7-14 days' }
             ].map((row, i) => (
-              <div key={i} className="grid grid-cols-4 border-b last:border-0" style={{ borderColor: '#F1F5F9', minWidth: '600px' }}>
-                <div className="p-3.5 text-sm font-medium" style={{ color: '#374151' }}>{row.label}</div>
+              <div key={i} className="grid grid-cols-4 border-b last:border-0" style={{ borderColor: '#F1F5F9' }}>
+                <div className="p-2 md:p-3.5 text-[10px] md:text-sm font-medium flex items-center" style={{ color: '#374151' }}>{row.label}</div>
 
                 {/* DIY Column */}
                 <div className="p-3.5 flex items-center justify-center">
@@ -798,10 +801,10 @@ export default function TaxCompliance() {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* TESTIMONIALS - Exact copy from HTML */}
-      <section className="py-24 px-8" style={{ background: '#F8FAFC' }}>
+      < section className="py-24 px-8" style={{ background: '#F8FAFC' }}>
         <div className="section-inner">
           <div className="text-center mb-14">
             <div className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: '#0D9488', letterSpacing: '0.12em' }}>Client Stories</div>
@@ -841,10 +844,10 @@ export default function TaxCompliance() {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* SECURITY - Exact copy from HTML */}
-      <section className="py-24 px-8 text-white" style={{ background: '#0F172A' }}>
+      < section className="py-24 px-8 text-white" style={{ background: '#0F172A' }}>
         <div className="section-inner">
           <div className="text-center mb-14">
             <div className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: '#5EEAD4', letterSpacing: '0.12em' }}>Security & Privacy</div>
@@ -877,10 +880,10 @@ export default function TaxCompliance() {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* FAQ - Exact copy from HTML */}
-      <section id="faq" className="py-24 px-8" style={{ background: '#F8FAFC' }}>
+      < section id="faq" className="py-24 px-8" style={{ background: '#F8FAFC' }}>
         <div className="section-inner">
           <div className="text-center mb-16">
             <div className="text-xs font-bold uppercase tracking-wider mb-3" style={{ color: '#0D9488', letterSpacing: '0.12em' }}>Common Questions</div>
@@ -951,10 +954,10 @@ export default function TaxCompliance() {
             </Accordion>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* FINAL CTA - Exact copy from HTML */}
-      <section className="pt-24 pb-32 px-8 bg-white">
+      < section className="pt-24 pb-32 px-8 bg-white" >
         <div className="max-w-4xl mx-auto">
           <div className="relative rounded-3xl px-12 py-16 md:px-16 text-center overflow-hidden" style={{ background: 'linear-gradient(135deg, #F0FDFA, #FFF)', border: '1px solid #CCFBF1' }}>
             <div className="absolute top-[-60px] right-[-60px] w-[200px] h-[200px] rounded-full" style={{ background: 'radial-gradient(circle, rgba(13,148,136,0.08), transparent 70%)' }}></div>
@@ -975,9 +978,9 @@ export default function TaxCompliance() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       <Footer />
-    </div>
+    </div >
   );
 }
