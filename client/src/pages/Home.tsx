@@ -120,7 +120,7 @@ export default function Home() {
                 title: "Tax & Compliance",
                 description: "US tax filing for individuals & businesses.",
                 icon: <FileText className="w-6 h-6" />,
-                href: "/tax-compliance",
+                href: "/ustax",
               },
               {
                 title: "Tax Resolution",

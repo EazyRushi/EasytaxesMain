@@ -44,7 +44,7 @@ export function Footer() {
             <h4 className="text-slate-200 font-bold text-xs uppercase tracking-[0.2em] mb-8">Services</h4>
             <ul className="space-y-4">
               {[
-                { label: "Tax & Compliance", href: "/tax-compliance" },
+                { label: "Tax & Compliance", href: "/ustax" },
                 { label: "Tax Resolution", href: "/tax-resolution" },
                 { label: "Assurance & SOC 2", href: "/assurance-soc2" },
                 { label: "CFO & Advisory", href: "/cfo-advisory" },
