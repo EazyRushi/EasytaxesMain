@@ -106,6 +106,9 @@ export default function TermsOfService() {
                             <p className="text-slate-600 mb-8">
                                 The composition of service teams depends on the engagement scope and jurisdiction.
                             </p>
+                            <p className="text-slate-600 mb-8 text-primary font-medium">
+                                We are partnered with Octondata for the Tax Eazytaxes dashboard, document collection, client portal, and other related functionalities.
+                            </p>
 
                             <hr className="my-8 border-slate-200" />
 
